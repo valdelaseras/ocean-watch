@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-interface Input {
+interface InputProps {
   id: string;
   title: string;
   text?: string;
@@ -13,7 +13,7 @@ interface Input {
   required: boolean | undefined;
 }
 
-const Input: FC<Input> = ({ id, title, text, name, type, placeholder, defaultValue, minLength, required }) =>
+const Input: FC<InputProps> = ({ id, title, text, name, type, placeholder, defaultValue, minLength, required }) =>
     <label htmlFor={id}>
       {title}
       {text ? <p>{text}</p> : null}
