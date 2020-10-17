@@ -1,15 +1,12 @@
 import React, { FC } from 'react';
-import Button from '../../atomic/atoms/button/Button';
-import Checkbox from '../../atomic/atoms/checkbox/Checkbox';
+import Section from "../../layout/section/Section";
+import Content from "../../layout/content/Content";
 
-const Dashboard: FC = () => {
-  return (
-    <>
-      <h1>Dash</h1>
-      <Button title="hereferwnkff" btnClass="test" type="button" disabled={true} />
-      <Checkbox id="vl" title="erhjhsfkjw" required={false} name="bee" checked={false} />
-    </>
-  );
-};
+const Dashboard: FC = () =>
+    <Section id="dashboard" title="Dashboard" titleClass="font-xl">
+        <Content colSize="column">
+            <p>Dashboard content goes here</p>
+        </Content>
+    </Section>;
 
 export default Dashboard;

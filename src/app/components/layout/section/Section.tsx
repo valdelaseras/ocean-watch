@@ -8,8 +8,7 @@ interface SectionProps {
   titleClass: string;
 }
 
-const Section: FC<SectionProps> = ({ id, title, titleClass, children }) => {
-  return (
+const Section: FC<SectionProps> = ({ id, title, titleClass, children }) =>
     <section className="section">
       <div className="section-content">
         <div className="grid">
@@ -24,8 +23,6 @@ const Section: FC<SectionProps> = ({ id, title, titleClass, children }) => {
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </section>;
 
 export default Section;

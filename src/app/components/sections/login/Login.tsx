@@ -1,5 +1,15 @@
 import React, { FC } from 'react';
+import Section from "../../layout/section/Section";
+import Content from "../../layout/content/Content";
 
-const Login: FC = () => <h1>Login</h1>;
+const Login: FC = () =>
+    <Section id="login" title="Login" titleClass="font-xl">
+        <Content colSize="column">
+            <p>Here be a logo or something</p>
+            <p>Lorem ipsum</p>
+            <p>Here be login form</p>
+        </Content>
+    </Section>
+;
 
 export default Login;
