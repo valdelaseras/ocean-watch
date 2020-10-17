@@ -1,11 +1,18 @@
 import React,{FC} from 'react';
+import NavLinkList, {NavLinkListChild} from "../../atomic/organisms/lists/navlink/NavLinkList";
+import { NavLink } from 'react-router-dom';
+
+const menuLinks: NavLinkListChild[] = [
+    { id: 'settings', title: "Settings", to: "/settings" },
+    { id: 'profile', title: "Profile", to: "/profile" },
+]
 
 const Nav: FC = () =>
     <nav className="nav">
         <div className="branding-logo">
-            <a href="/dashboard" title="Ocean Watch">
+            <NavLink to="/" title="Ocean Watch" key="branding-link">
                 Ocean Watch
-            </a>
+            </NavLink>
         </div>
         <div>
             <input type="checkbox" id="nav-checkbox" className="nav-checkbox" />
@@ -15,11 +22,7 @@ const Nav: FC = () =>
                 <span />
             </label>
             <div className="slide-in-menu">
-                <ul className="menu-list">
-                    <li><a href="">Een</a></li>
-                    <li><a href="">Link</a></li>
-                    <li><a href="">Hier</a></li>
-                </ul>
+                <NavLinkList className="menu-list" children={ menuLinks }/>
             </div>
         </div>
     </nav>

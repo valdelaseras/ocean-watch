@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 interface CheckboxProps {
   id: string;
-  title: string;
+  title?: string;
   required: boolean;
   text?: string;
   name: string;
