@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/scss/index.scss';
-import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
+import { initialiseFirebase } from './firebase-configuration';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +14,8 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+/**
+ * Initialise Firebase app with the config specific to Ocean Watch
+ * Additionally initialise services required for analytics and push notifications
+ */
+initialiseFirebase();
