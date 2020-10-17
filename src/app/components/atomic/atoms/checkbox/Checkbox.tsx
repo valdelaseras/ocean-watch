@@ -9,15 +9,12 @@ interface CheckboxProps {
   checked?: boolean;
 }
 
-const Checkbox: FC<CheckboxProps> = ({ id, title, required, text, name, checked }) => {
-  return (
+const Checkbox: FC<CheckboxProps> = ({ id, title, required, text, name, checked }) =>
     <label htmlFor={id}>
       {title}
       {required ? ' *' : null}
       {text ? <p>{text}</p> : null}
       <input type="checkbox" id={id} name={name} defaultChecked={checked} required={required} />
-    </label>
-  );
-};
+    </label>;
 
 export default Checkbox;

@@ -7,13 +7,10 @@ interface ButtonProps {
   disabled: boolean | undefined;
 }
 
-const Button: FC<ButtonProps> = ({ type, title, btnClass, disabled }) => {
-  return (
+const Button: FC<ButtonProps> = ({ type, title, btnClass, disabled }) =>
     <button type={type} title={title} className={'btn' + btnClass} disabled={disabled}>
       {title}
-    </button>
-  );
-};
+    </button>;
 
 export default Button;
 

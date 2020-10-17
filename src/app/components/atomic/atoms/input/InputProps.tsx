@@ -13,8 +13,7 @@ interface Input {
   required: boolean | undefined;
 }
 
-const Input: FC<Input> = ({ id, title, text, name, type, placeholder, defaultValue, minLength, required }) => {
-  return (
+const Input: FC<Input> = ({ id, title, text, name, type, placeholder, defaultValue, minLength, required }) =>
     <label htmlFor={id}>
       {title}
       {text ? <p>{text}</p> : null}
@@ -25,8 +24,6 @@ const Input: FC<Input> = ({ id, title, text, name, type, placeholder, defaultVal
              defaultValue={defaultValue}
              minLength={minLength}
              required={required} />
-    </label>
-  );
-};
+    </label>;
 
 export default Input;

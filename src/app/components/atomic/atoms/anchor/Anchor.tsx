@@ -5,12 +5,9 @@ interface AnchorProps {
   href: string;
 }
 
-const Anchor: FC<AnchorProps> = ({ title, href }) => {
-  return (
+const Anchor: FC<AnchorProps> = ({ title, href }) =>
     <a title={title} href={href}>
       {title}
-    </a>
-  );
-};
+    </a>;
 
 export default Anchor;
