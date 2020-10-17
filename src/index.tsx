@@ -6,12 +6,12 @@ import AppRoutes from './AppRoutes';
 import { initialiseFirebase } from './firebase-configuration';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-            <AppRoutes/>
-        </Router>
-    </React.StrictMode>,
-    document.getElementById( 'root' ),
+  <React.StrictMode>
+    <Router>
+      <AppRoutes />
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
 
 /**
