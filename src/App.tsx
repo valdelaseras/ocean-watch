@@ -1,16 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Outlet } from 'react-router-dom';
+import './App.css';
 
-/**
- * wfkjsjnkjeafnke
- * @constructor
- */
-function App() {
+const App: FC = () => {
   return (
-    <div className="column">
-      <div className="column two">Test</div>
-      <div className="column two">Test</div>
+    <div className="App">
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;
