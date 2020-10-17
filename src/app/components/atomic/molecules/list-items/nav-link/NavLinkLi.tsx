@@ -9,7 +9,7 @@ interface NavLinkLiProps {
 
 const NavLinkLi: FC<NavLinkLiProps> = ({ to,id,title }) =>
     <li>
-        <NavLink to={ to } key={ id } title={ title }>
+        <NavLink to={ to } title={ title }>
             { title }
         </NavLink>
     </li>;

@@ -15,7 +15,7 @@ interface NavLinkListProps {
 const NavLinkList: FC<NavLinkListProps> = ( { className, children }) =>
     <ul className={ className }>
         { children.map((child) => (
-            <NavLinkLi to={ child.to } id={ child.id } title={ child.title }/>
+            <NavLinkLi to={ child.to } key={ child.id }  id={ child.id } title={ child.title }/>
         ))}
     </ul>;
 
