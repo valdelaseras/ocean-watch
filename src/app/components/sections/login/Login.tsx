@@ -5,7 +5,6 @@ import Content from "../../layout/content/Content";
 const Login: FC = () =>
     <Section id="login" title="Login" titleClass="font-xl">
         <Content colSize="column">
-            <p>Here be a logo or something</p>
             <p>Lorem ipsum</p>
             <p>Here be login form</p>
         </Content>

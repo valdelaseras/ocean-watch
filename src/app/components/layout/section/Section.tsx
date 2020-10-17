@@ -4,8 +4,8 @@ import Content from '../../layout/content/Content';
 
 interface SectionProps {
   id: string;
-  title: string;
-  titleClass: string;
+  title?: string;
+  titleClass?: string;
 }
 
 const Section: FC<SectionProps> = ({ id, title, titleClass, children }) =>
