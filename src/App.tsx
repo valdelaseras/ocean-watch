@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * wfkjsjnkjeafnke
+ * @constructor
+ */
 function App() {
   return (
     <div className="column">
