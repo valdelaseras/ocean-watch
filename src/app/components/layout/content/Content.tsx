@@ -1,15 +1,15 @@
-import React, {FC} from "react";
+import React, { FC } from 'react';
 
 interface ContentProps {
-    colSize: string
+  colSize: string;
 }
 
-const Content: FC<ContentProps> = ({colSize, children }) => {
-    return (
-        <div className={colSize}>
-            <div className="content">{children}</div>
-        </div>
-    )
+const Content: FC<ContentProps> = ({ colSize, children }) => {
+  return (
+    <div className={colSize}>
+      <div className="content">{children}</div>
+    </div>
+  );
 };
 
 export default Content;
