@@ -8,21 +8,22 @@ interface SectionProps {
   titleClass?: string;
 }
 
-const Section: FC<SectionProps> = ({ id, title, titleClass, children }) =>
-    <section className="section">
-      <div className="section-content">
-        <div className="grid">
-          <div id={id}>
-            <Row colSize={'column'}>
-              <Content colSize={'column'}>
-                <h1 className={titleClass}>{title}</h1>
-              </Content>
-            </Row>
+const Section: FC<SectionProps> = ({ id, title, titleClass, children }) => (
+  <section className="section">
+    <div className="section-content">
+      <div className="grid">
+        <div id={id}>
+          <Row colSize={'column'}>
+            <Content colSize={'column'}>
+              <h1 className={titleClass}>{title}</h1>
+            </Content>
+          </Row>
 
-            {children}
-          </div>
+          {children}
         </div>
       </div>
-    </section>;
+    </div>
+  </section>
+);
 
 export default Section;

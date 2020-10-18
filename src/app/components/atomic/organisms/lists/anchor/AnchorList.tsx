@@ -1,21 +1,18 @@
 import React, { FC } from 'react';
-import AnchorLi from "../../../molecules/list-items/anchor/AnchorLi";
-
-interface AnchorListChild {
-    title: string,
-    href: string
-}
+import AnchorLi from '../../../molecules/list-items/anchor/AnchorLi';
+import { AnchorProps } from '../../../atoms/anchor/Anchor';
 
 interface AnchorListProps {
-    className: string
-    children: AnchorListChild[]
+  className: string;
+  listItems: AnchorProps[];
 }
 
-const AnchorList: FC<AnchorListProps> = ({ className, children }) =>
-    <ul className={ className }>
-        { children.map((child) => (
-            <AnchorLi title={ child.title } href={ child.href }/>
-        ))}
-    </ul>;
+const AnchorList: FC<AnchorListProps> = ({ className, listItems }) => (
+  <ul className={className}>
+    {listItems.map((listItem) => (
+      <AnchorLi title={listItem.title} href={listItem.href} />
+    ))}
+  </ul>
+);
 
 export default AnchorList;
