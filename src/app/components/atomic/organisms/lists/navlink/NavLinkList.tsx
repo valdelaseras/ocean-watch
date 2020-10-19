@@ -1,21 +1,22 @@
 import React, { FC } from 'react';
-import NavLinkLi from '../../../molecules/list-items/nav-link/NavLinkLi';
-
-export interface NavLinkListChild {
-  id: string;
-  title: string;
-  to: string;
-}
+import NavLinkLi, { NavLinkLiProps } from '../../../molecules/list-items/nav-link/NavLinkLi';
 
 interface NavLinkListProps {
   className: string;
-  listItems: NavLinkListChild[];
+  listItems: NavLinkLiProps[];
 }
 
 const NavLinkList: FC<NavLinkListProps> = ({ className, listItems }) => (
   <ul className={className}>
     {listItems.map((listItem) => (
-      <NavLinkLi to={listItem.to} key={listItem.id} id={listItem.id} title={listItem.title} />
+      <NavLinkLi
+        className={listItem.className}
+        to={listItem.to}
+        key={listItem.id}
+        id={listItem.id}
+        title={listItem.title}
+        text={listItem.text}
+      />
     ))}
   </ul>
 );

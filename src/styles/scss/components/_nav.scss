@@ -105,8 +105,17 @@
   font-size: 1.5rem;
 }
 
+.menu-list > li p {
+  font-size: 0.8rem;
+}
+
 .menu-list > li a.active {
   color: var(--quaternary-color);
+}
+
+//TODO: some nice styling for this. User space must visually be separate from the rest
+.menu-list > li .user-space {
+  color: deepskyblue;
 }
 
 @media only screen and (min-width: 1024px) {
