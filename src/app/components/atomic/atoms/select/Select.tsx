@@ -5,7 +5,7 @@ export interface SelectChild {
   title: string;
 }
 
-interface SelectProps {
+export interface SelectProps {
   id: string;
   title?: string;
   required: boolean | undefined;
@@ -20,7 +20,7 @@ const Select: FC<SelectProps> = ({ id, title, required, text, name, defaultValue
     {title}
     {required ? ' *' : null}
     {text ? <p>{text}</p> : null}
-    <select id={id} required={required} name={name} defaultValue={defaultValue}>
+    <select key={id} id={id} required={required} name={name} defaultValue={defaultValue}>
       {children.map((child) => (
         <option key={child.id} value={child.title}>
           {child.title}

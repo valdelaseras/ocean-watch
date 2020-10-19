@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 
-interface InputProps {
+export interface InputProps {
   id: string;
   title: string;
   text?: string;
   name: string;
   type: 'text' | 'email' | 'number' | 'password';
-  // TODO: probably need more types like date, search, time, file
   placeholder: string;
   defaultValue: string;
   minLength?: number;
@@ -18,10 +17,11 @@ const Input: FC<InputProps> = ({ id, title, text, name, type, placeholder, defau
     {title}
     {text ? <p>{text}</p> : null}
     <input
+      key={id}
       id={id}
       name={name}
       type={type}
-      placeholder={placeholder}
+      placeholder={`${placeholder}${required ? ' *' : '' }`}
       defaultValue={defaultValue}
       minLength={minLength}
       required={required}

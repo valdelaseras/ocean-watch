@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-interface CheckboxProps {
+export interface CheckboxProps {
   id: string;
   title?: string;
   text?: string;
@@ -14,7 +14,7 @@ const Checkbox: FC<CheckboxProps> = ({ id, title, required, text, name, checked 
     {title}
     {required ? ' *' : null}
     {text ? <p>{text}</p> : null}
-    <input type="checkbox" id={id} name={name} defaultChecked={checked} required={required} />
+    <input key={id} type="checkbox" id={id} name={name} defaultChecked={checked} required={required} />
   </label>
 );
 
