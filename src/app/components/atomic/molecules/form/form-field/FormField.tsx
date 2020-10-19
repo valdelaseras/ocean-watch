@@ -1,7 +1,4 @@
-import React, {ChangeEvent, Dispatch, FC, ReactElement, SetStateAction, useState} from 'react';
-import { InputProps } from '../../../atoms/input/Input';
-import { SelectProps } from '../../../atoms/select/Select';
-import { CheckboxProps } from '../../../atoms/checkbox/Checkbox';
+import React, { Dispatch, FC, ReactElement, SetStateAction, useState } from 'react';
 
 let valid: boolean,
   setValidity: Dispatch<SetStateAction<false>>,
@@ -15,24 +12,19 @@ interface FormFieldProps {
 
 const FormField: FC<FormFieldProps> = ({ valid, value, children }) => {
   [valid, setValidity] = useState(false);
-  [value, setValue] = useState( value );
+  [value, setValue] = useState(value);
 
-
-  return (
-    <div className="field">
-      {replaceField( ( children as ReactElement ) ) }
-    </div>
-  );
+  return <div className="field">{replaceField(children as ReactElement)}</div>;
 };
 
-const replaceField = ( field: ReactElement ): ReactElement => (
-    React.cloneElement(field, {
-      valid: valid,
-      value: value,
-      handleChange: handleChange,
-    }));
+const replaceField = (field: ReactElement): ReactElement =>
+  React.cloneElement(field, {
+    valid: valid,
+    value: value,
+    handleChange: handleChange,
+  });
 
-const handleChange = ( e: any ) => {
+const handleChange = (e: any) => {
   setValidity(e.target.checkValidity());
   setValue(e.target.value);
 };

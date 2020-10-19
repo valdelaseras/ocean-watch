@@ -28,3 +28,12 @@ const Nav: FC = () => (
   </nav>
 );
 export default Nav;
+
+// NOTES: navlinklist must consist of the following, in the below order:
+// - Profile ( at top, visualised I think only as user icon )
+// - Settings ( may also be reached from profile view )
+// - Emergency hotlines ( DOC phone for stranded / sick animals etc )
+// - Safety information page ? Not sure about this yet but basically DOCs rules and regulations about dealing with wildlife.
+// individual detailed sightings must also contain a reference or direct message relating to the sighted animal. Like, stay
+// minimum of 20 mtrs away from seals, don't block of a seals way to ocean etc
+// - ID guides ( ID guides, ID links, for example NIWA ID guides or something, other resources )
