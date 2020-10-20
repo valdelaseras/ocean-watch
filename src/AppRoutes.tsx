@@ -27,6 +27,8 @@ import OtherContributions from "./app/components/sections/contribute/other/Other
 import DevContributions from "./app/components/sections/contribute/devs/DevContributions";
 import ReportIssues from "./app/components/sections/contact/issues/ReportIssues";
 import Feedback from "./app/components/sections/contact/feedback/Feedback";
+import Mission from "./app/components/sections/about/mission/Mission";
+import Faq from "./app/components/sections/about/faq/Faq";
 
 const AppRoutes: FC = () =>
   useRoutes([
@@ -54,7 +56,12 @@ const AppRoutes: FC = () =>
             { path: 'visual', element: <VisualSettings /> },
           ],},
         { path: 'profile', element: <Profile /> },
-        { path: 'about', element: <About /> },
+        { path: 'about', element: <About />,
+          children: [
+            { path: 'mission', element: <Mission /> },
+            { path: 'faq', element: <Faq /> },
+          ],
+        },
         { path: 'hotlines', element: <Hotlines /> },
         {
           path: 'education',
