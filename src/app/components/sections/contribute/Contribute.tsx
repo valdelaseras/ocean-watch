@@ -7,7 +7,7 @@ const Contribute: FC = () => (
   <Section id="contribute" title="Contribute" titleClass="font-xl">
     <Content colSize="column">
       <h3>Contribute</h3>
-        <Outlet />
+      <Outlet />
     </Content>
   </Section>
 );

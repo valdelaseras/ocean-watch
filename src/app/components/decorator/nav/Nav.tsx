@@ -28,25 +28,16 @@ const Nav: FC = () => (
             <DropdownCheckbox id="settings" title="Settings">
               <ul className="submenu-list">
                 <li>
-                  <p>
-                    How and when you want to be notified
-                  </p>
                   <NavLink to="/settings/notifications" title="Notifications" key="notifications">
                     Notifications
                   </NavLink>
                 </li>
                 <li>
-                  <p>
-                    What and where are you watching?
-                  </p>
                   <NavLink to="/settings/subscriptions" title="Subscriptions" key="subscriptions">
                     Subscriptions
                   </NavLink>
                 </li>
                 <li>
-                  <p>
-                    Your theme preferences
-                  </p>
                   <NavLink to="/settings/visual" title="Visual settings" key="visual-settings">
                     Visual Settings
                   </NavLink>
@@ -54,11 +45,16 @@ const Nav: FC = () => (
               </ul>
             </DropdownCheckbox>
           </li>
+          <div className="divider" />
           <li>
             <DropdownCheckbox id="hotlines" title="Emergency hotlines">
-              <NavLink to="/hotlines" title="Emergency hotlines" key="hotlines">
-                Report sick, injured or dead wildlife
-              </NavLink>
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="/hotlines" title="Emergency hotlines" key="hotlines">
+                    Report sick, injured or dead wildlife
+                  </NavLink>
+                </li>
+              </ul>
             </DropdownCheckbox>
           </li>
           <li>
@@ -68,7 +64,6 @@ const Nav: FC = () => (
                   <NavLink to="education/data" title="Data" key="ow-data">
                     Ocean Watch data
                   </NavLink>
-                  <p>OW data in cool graphs</p>
                 </li>
                 <li>
                   <NavLink to="education/identification" title="Identification" key="id">
@@ -83,27 +78,7 @@ const Nav: FC = () => (
               </ul>
             </DropdownCheckbox>
           </li>
-          <li>
-            <DropdownCheckbox id="contribute" title="Contribute">
-              <ul className="submenu-list">
-                <li>
-                  <NavLink to="/contribute/monetary" title="Monetary contributions" key="monetary-contributions">
-                    Monetary contributions
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/contribute/other" title="Other contributions" key="other-contributions">
-                    Other contributions
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/contribute/dev" title="Dev contributions" key="dev-contributions">
-                    As developer
-                  </NavLink>
-                </li>
-              </ul>
-            </DropdownCheckbox>
-          </li>
+          <div className="divider" />
           <li>
             <DropdownCheckbox id="about" title="About">
               <ul className="submenu-list">
@@ -136,6 +111,27 @@ const Nav: FC = () => (
                 <li>
                   <NavLink to="/contact/feedback" title="Send feedback" key="feedback">
                     Send feedback / suggestions
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
+          </li>
+          <li>
+            <DropdownCheckbox id="contribute" title="Contribute">
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="/contribute/monetary" title="Monetary contributions" key="monetary-contributions">
+                    Monetary contributions
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contribute/other" title="Other contributions" key="other-contributions">
+                    Other contributions
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contribute/dev" title="Dev contributions" key="dev-contributions">
+                    As developer
                   </NavLink>
                 </li>
               </ul>

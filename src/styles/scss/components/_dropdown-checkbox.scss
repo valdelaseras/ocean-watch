@@ -17,8 +17,20 @@
   width: 0;
 }
 
-.dropdown label.chevron:after {
+.dropdown label.chevron.chevron-small:after {
   margin-left: 1rem;
+}
+
+.dropdown label {
+  font-weight: normal;
+}
+
+label.chevron.chevron-small:after {
+  margin-bottom: 7px;
+}
+
+.dd-checkbox:checked ~ label.chevron.chevron-small:after {
+  margin-bottom: 1px;
 }
 
 .dd-checkbox:checked ~ label.chevron:after {

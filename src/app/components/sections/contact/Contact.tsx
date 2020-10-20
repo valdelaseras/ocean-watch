@@ -7,15 +7,15 @@ const Contact: FC = () => (
   <Section id="contact" title="Contact" titleClass="font-xl">
     <Content colSize="column">
       <h3>Contact</h3>
-        <ul>
-            <li>Mail</li>
-            <li>Phone</li>
-            <li>As business?</li>
-            <li>As dev?</li>
-            <li>Report issues</li>
-            <li>Feedback</li>
-        </ul>
-        <Outlet />
+      <ul>
+        <li>Mail</li>
+        <li>Phone</li>
+        <li>As business?</li>
+        <li>As dev?</li>
+        <li>Report issues</li>
+        <li>Feedback</li>
+      </ul>
+      <Outlet />
     </Content>
   </Section>
 );

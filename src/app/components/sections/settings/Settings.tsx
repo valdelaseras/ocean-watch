@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 const Settings: FC = () => (
   <Section id="settings" title="Settings" titleClass="font-xl">
     <Content colSize="column">
-        <Outlet />
+      <Outlet />
     </Content>
   </Section>
 );
