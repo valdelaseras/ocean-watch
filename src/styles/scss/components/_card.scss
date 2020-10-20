@@ -1,0 +1,25 @@
+a.card {
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--secondary-color-alpha);
+}
+
+a.card:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  .card .content {
+    padding: 1rem;
+  }
+}
+//.card img {
+//  display: block;
+//  width: 100%;
+  //TODO: image should have 100% of height possible
+  // within the card ( which is 200px by default now ).
+  // Uploaded images must automatically be cropped but
+  // not completely distorted.
+  // with 300px height on small screens its gonna look
+  // weird though
+//}
