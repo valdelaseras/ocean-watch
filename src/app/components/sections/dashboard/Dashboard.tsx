@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
 import Section from '../../layout/section/Section';
 import Content from '../../layout/content/Content';
-import DropdownCheckbox from '../../atomic/molecules/dropdown-checkbox/DropdownCheckbox';
-// import FormField from '../../atomic/molecules/form/form-field/FormField';
-// import Input from '../../atomic/atoms/input/Input';
 
 const Dashboard: FC = () => (
   <Section id="dashboard" title="Dashboard" titleClass="font-xl">
