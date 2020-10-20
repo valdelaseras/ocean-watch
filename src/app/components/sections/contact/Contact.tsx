@@ -1,15 +1,21 @@
 import React, { FC } from 'react';
 import Section from '../../layout/section/Section';
 import Content from '../../layout/content/Content';
+import { Outlet } from 'react-router-dom';
 
 const Contact: FC = () => (
   <Section id="contact" title="Contact" titleClass="font-xl">
     <Content colSize="column">
-      <h3>In this section:</h3>
+      <h3>Contact</h3>
       <ul>
-        <li>- get in touch ( phone, email )</li>
-        <li>- report issues</li>
+        <li>Mail</li>
+        <li>Phone</li>
+        <li>As business?</li>
+        <li>As dev?</li>
+        <li>Report issues</li>
+        <li>Feedback</li>
       </ul>
+      <Outlet />
     </Content>
   </Section>
 );
