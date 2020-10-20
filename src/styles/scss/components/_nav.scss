@@ -114,8 +114,13 @@
 }
 
 //TODO: some nice styling for this. User space must visually be separate from the rest
-.menu-list > li .user-space {
+.menu-list > li.user-space {
   color: deepskyblue;
+}
+
+//TODO: some nice styling
+.menu-list > li .submenu-list {
+  padding-left: 1rem;
 }
 
 @media only screen and (min-width: 1024px) {

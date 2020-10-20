@@ -1,27 +1,6 @@
 import React, { FC } from 'react';
-import NavLinkList from '../../atomic/organisms/lists/navlink/NavLinkList';
 import { NavLink } from 'react-router-dom';
-import { NavLinkLiProps } from '../../atomic/molecules/list-items/nav-link/NavLinkLi';
-
-const menuLinks: NavLinkLiProps[] = [
-  { id: 'profile', title: 'Profile', to: '/profile', className: 'user-space' },
-  { id: 'settings', title: 'Settings', to: '/settings', className: 'user-space' },
-  {
-    id: 'hotlines',
-    title: 'Emergency hotlines',
-    to: '/hotlines',
-    text: 'Notify DOC of sick, injured or stranded animals',
-  },
-  {
-    id: 'education',
-    title: 'Education',
-    to: '/education',
-    text: 'Data, identification guides and other learning resources',
-  },
-  { id: 'about', title: 'About', to: '/about' },
-  { id: 'contact', title: 'Contact', to: '/contact' },
-  { id: 'contribute', title: 'Contribute', to: '/contribute' },
-];
+import DropdownCheckbox from '../../atomic/molecules/dropdown-checkbox/DropdownCheckbox';
 
 const Nav: FC = () => (
   <nav className="nav">
@@ -38,40 +17,133 @@ const Nav: FC = () => (
         <span />
       </label>
       <div className="slide-in-menu">
-        <NavLinkList className="menu-list" listItems={menuLinks} />
-        {/*TODO: some nav links contain sub menu link items that may be viewed when click/tab on chevron*/}
+        <ul className="menu-list">
+          <li className="user-space">
+            <NavLink to="/profile" title="Profile" key="profile">
+              Profile
+            </NavLink>
+          </li>
+          <li className="user-space">
+            {/*TODO: styling for main settings title is a bit off. Profile for example is an anchor, settings a label */}
+            <DropdownCheckbox id="settings" title="Settings">
+              <ul className="submenu-list">
+                <li>
+                  <p>
+                    How and when you want to be notified
+                  </p>
+                  <NavLink to="/settings/notifications" title="Notifications" key="notifications">
+                    Notifications
+                  </NavLink>
+                </li>
+                <li>
+                  <p>
+                    What and where are you watching?
+                  </p>
+                  <NavLink to="/settings/subscriptions" title="Subscriptions" key="subscriptions">
+                    Subscriptions
+                  </NavLink>
+                </li>
+                <li>
+                  <p>
+                    Your theme preferences
+                  </p>
+                  <NavLink to="/settings/visual" title="Visual settings" key="visual-settings">
+                    Visual Settings
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
+          </li>
+          <li>
+            <DropdownCheckbox id="hotlines" title="Emergency hotlines">
+              <NavLink to="/hotlines" title="Emergency hotlines" key="hotlines">
+                Report sick, injured or dead wildlife
+              </NavLink>
+            </DropdownCheckbox>
+          </li>
+          <li>
+            <DropdownCheckbox id="education" title="Education">
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="education/data" title="Data" key="ow-data">
+                    Ocean Watch data
+                  </NavLink>
+                  <p>OW data in cool graphs</p>
+                </li>
+                <li>
+                  <NavLink to="education/identification" title="Identification" key="id">
+                    Identification guides
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="education/resources" title="Resources" key="resources">
+                    Other learning resources
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
+          </li>
+          <li>
+            <DropdownCheckbox id="contribute" title="Contribute">
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="/contribute/monetary" title="Monetary contributions" key="monetary-contributions">
+                    Monetary contributions
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contribute/other" title="Other contributions" key="other-contributions">
+                    Other contributions
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contribute/dev" title="Dev contributions" key="dev-contributions">
+                    As developer
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
+          </li>
+          <li>
+            <DropdownCheckbox id="about" title="About">
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="/about/mission" title="Mission" key="mission">
+                    Mission
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/about/faq" title="FAQ" key="faq">
+                    FAQ
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
+          </li>
+          <li>
+            <DropdownCheckbox id="contact" title="Contact">
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="/contact" title="Contact" key="contact">
+                    Contact
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact/issues" title="Report issues" key="issues">
+                    Report issues
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact/feedback" title="Send feedback" key="feedback">
+                    Send feedback / suggestions
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 );
 export default Nav;
-
-// Full nav menu looks like this:
-// - profile
-// - settings
-//      - ( profile ? )
-//      - ( "add ons" ? ( contains optional, opt in, features like low tide info, notifications )
-//      - notifications
-//      - subscriptions ( region, species, biome )
-//      - visual settings ( theme, fonts, font size )
-// - emergency hotlines ( DOC emergency hotlines for sick and or stranded animals etc. )
-// - education
-//      - Ocean Watch data ( graphs, pie charts, maps, any kind of data overview, trends etc. A cool thing. Maybe some ML here )
-//      - ID guides and resources
-//      - ( tips ? when, where to see what )
-// - about
-//      - mission statement and all that
-//      - FAQ
-//      - Privacy policy, cookie policy
-//      - any credits
-//      - for devs
-// - contact
-//      - get in touch, questions or whatever ( phone, email )
-//      - report issues ( maybe not the best place here, not sure yet )
-// - contribute
-//      - Monetary donations ( maybe to us, in any case other organisations like Orca foundation, mission blue blablabla )
-//      - Other donations ( stuff like cotton sheets to help stranded whales etc. )
-//      - as developer ( contribute to OW open source? )
-
-// in footer:
-// pp policy, cookie policy, faq, report issues, contribute ( desktop only? )

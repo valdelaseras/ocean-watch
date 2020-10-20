@@ -6,15 +6,13 @@ export interface NavLinkLiProps {
   id: string;
   title: string;
   className?: string;
-  text?: string;
 }
 
-const NavLinkLi: FC<NavLinkLiProps> = ({ to, id, text, className, title }) => (
+const NavLinkLi: FC<NavLinkLiProps> = ({ to, id, className, title }) => (
   <li>
     <NavLink to={to} title={title} className={className}>
       {title}
     </NavLink>
-    {text ? <p>{text}</p> : null}
   </li>
 );
 

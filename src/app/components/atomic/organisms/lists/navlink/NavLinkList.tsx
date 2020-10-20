@@ -15,7 +15,6 @@ const NavLinkList: FC<NavLinkListProps> = ({ className, listItems }) => (
         key={listItem.id}
         id={listItem.id}
         title={listItem.title}
-        text={listItem.text}
       />
     ))}
   </ul>

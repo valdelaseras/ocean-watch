@@ -7,10 +7,14 @@
 
 .dd-checkbox:checked ~ .dd-panel {
   visibility: visible;
+  height: auto;
+  width: 100%;
 }
 
 .dd-panel {
   visibility: hidden;
+  height: 0;
+  width: 0;
 }
 
 .dropdown label.chevron:after {
