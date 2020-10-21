@@ -3,6 +3,17 @@
   width: auto;
 }
 
-.user-image {
-  width: 100%;
+.medium-icon {
+  height: 1.5rem;
+  width: auto;
+}
+
+.large-icon {
+  height: 2.5rem;
+  width: auto;
+}
+
+.user-image img {
+  width: 50%;
+  border-radius: 50%;
 }
