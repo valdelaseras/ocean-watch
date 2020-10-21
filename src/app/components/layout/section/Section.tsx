@@ -6,10 +6,11 @@ interface SectionProps {
   id: string;
   title?: string;
   titleClass?: string;
+  themeClass?: string;
 }
 
-const Section: FC<SectionProps> = ({ id, title, titleClass, children }) => (
-  <section className="section">
+const Section: FC<SectionProps> = ({ id, themeClass, title, titleClass, children }) => (
+  <section className={'section ' + themeClass}>
     <div className="section-content">
       <div className="grid">
         <div id={id}>

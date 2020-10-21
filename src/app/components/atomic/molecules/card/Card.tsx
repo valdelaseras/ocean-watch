@@ -3,6 +3,8 @@
 // maybe a better name would be a modal or something?
 
 import React, { FC } from 'react';
+import UtilBar from '../util-bar/UtilBar';
+import Select from '../../atoms/select/Select';
 
 export interface CardProps {
   colSizeA: string;
@@ -33,6 +35,31 @@ const Card: FC<CardProps> = ({ colSizeA, colSizeB, className, title, src, imgCla
     </div>
     <div className={colSizeB}>
       <div className="content">{children}</div>
+      <UtilBar className="compact-ub">
+        <li>
+          <button className="btn btn-secondary btn-compact icon-btn">
+            Save
+            <img src="/assets/icons/heart.svg" alt="Heart icon" title="Add to favorites" className="small-icon" />
+          </button>
+        </li>
+        <li>
+          <button className="btn btn-secondary btn-compact icon-btn">
+            Follow
+            <img
+              src="/assets/icons/bell.svg"
+              alt="Follow sighting icon"
+              title="Follow sighting"
+              className="small-icon"
+            />
+          </button>
+        </li>
+        <li>
+          <button className="btn btn-secondary btn-compact icon-btn">
+            Verify
+            <img src="/assets/icons/check.svg" alt="Verification icon" title="Verify sighting" className="small-icon" />
+          </button>
+        </li>
+      </UtilBar>
     </div>
   </a>
 );

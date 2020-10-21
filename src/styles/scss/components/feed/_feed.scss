@@ -1,12 +1,8 @@
 .feed {
   width: 100vw;
   margin-left: -1rem;
-  background-color: seashell;
+  background-color: var(--tertiary-color);
   padding: 0 1rem 1rem 1rem;
-}
-
-.feed ul {
-  margin: 0;
 }
 
 @media only screen and (min-width: 1024px) {

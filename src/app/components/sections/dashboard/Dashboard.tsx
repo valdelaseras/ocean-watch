@@ -3,16 +3,70 @@ import Section from '../../layout/section/Section';
 import Content from '../../layout/content/Content';
 import Card from '../../atomic/molecules/card/Card';
 import Feed from '../../atomic/organisms/feed/Feed';
+import UtilBar from '../../atomic/molecules/util-bar/UtilBar';
+import Select from '../../atomic/atoms/select/Select';
 
-// TODO/NOTE: Slight change of plan. Dashboard only shows sightings of current day
-// For full complete overview of all sightings within user settings, user should navigate to /sightings
+// TODO/NOTE: Dashboard only shows sightings of current day?
+//  Not sure if this may be too confusing and one sighting
+//  feed is probably preferable.
+
+const distanceSortingOptions = [
+  { id: '5km', value: '5km', title: 'Within 5km' },
+  { id: '10km', value: '10km', title: 'Within 10km' },
+  { id: '25km', value: '25km', title: 'Within 25km' },
+  { id: 'all-distances', value: 'all distances', title: 'All' },
+];
+
+const genericSortingOptions = [
+  { id: 'all', value: 'all', title: 'All' },
+  { id: 'latest', value: 'latest', title: 'Latest' },
+  { id: 'active', value: 'active', title: 'Active' },
+  { id: 'popular', value: 'popular', title: 'Popular' },
+];
+
+const biomeSortingOptions = [
+  { id: 'all-biomes', value: 'all-biomes', title: 'All biomes' },
+  { id: 'sky', value: 'sky', title: 'Sky' },
+  { id: 'surface', value: 'surface', title: 'Surface' },
+  { id: 'below-surface', value: 'below-surface', title: 'Below surface' },
+  { id: 'ocean-floor', value: 'ocean-floor', title: 'Ocean floor' },
+  { id: 'tide-pools', value: 'tide-pools', title: 'Tide pools' },
+];
 
 const Dashboard: FC = () => (
-  // TODO: in this section, it might look better without 'dashboard'
-  //  title and section / section content paddings
-  <Section id="dashboard" title="Dashboard" titleClass="font-xl">
+  <Section id="dashboard" title="Sightings" themeClass="theme-quaternary">
     <Content colSize="column">
       <Feed>
+        {/*TODO: on really small screens the dropdowns are a little messed up if there are too many ( 1 more than current )*/}
+        <UtilBar className="full-vw">
+          <li>
+            <Select
+              id="sort-by-distance"
+              defaultValue={'Within 5km'}
+              required={false}
+              name="distance-sorting"
+              children={distanceSortingOptions}
+            />
+          </li>
+          <li>
+            <Select
+              id="sort-by-generic"
+              defaultValue={'Latest'}
+              required={false}
+              name="generic-sorting"
+              children={genericSortingOptions}
+            />
+          </li>
+          <li>
+            <Select
+              id="sort-by-biome"
+              defaultValue={'All'}
+              required={false}
+              name="biome-sorting"
+              children={biomeSortingOptions}
+            />
+          </li>
+        </UtilBar>
         <ul className="feed-list">
           <li>
             <Card colSizeA="column four a" colSizeB="column four c" title="Southern Right Whale">
@@ -79,6 +133,13 @@ const Dashboard: FC = () => (
           </li>
         </ul>
       </Feed>
+      <UtilBar className="full-vw fixed-bottom">
+        <li>
+          <button className="btn btn-primary" type="button">
+            Post sighting
+          </button>
+        </li>
+      </UtilBar>
     </Content>
   </Section>
 );

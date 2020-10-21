@@ -2,12 +2,8 @@ import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import DropdownCheckbox from '../../atomic/molecules/dropdown-checkbox/DropdownCheckbox';
 
-// TODO: expanded menu is too wide ( overflow to the right ), I have no
-//  proper control over the padding etc. like this. Long titles cause
-//  ugly alignment and chevrons should probably also be aligned in a
-//  nice straight line to the right ( but 2rem padding from right )
-
-// Also need swipe ( right ) closing ability
+// TODO: close nav after navigating
+// Also need swipe ( left to right ) closing ability
 
 const Nav: FC = () => (
   <nav className="nav">
@@ -68,17 +64,17 @@ const Nav: FC = () => (
             <DropdownCheckbox id="education" title="Education">
               <ul className="submenu-list">
                 <li>
-                  <NavLink to="education/data" title="Data" key="ow-data">
+                  <NavLink to="/education/data" title="Data" key="ow-data">
                     Ocean Watch data
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="education/identification" title="Identification" key="id">
+                  <NavLink to="/education/identification" title="Identification" key="id">
                     Identification guides
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="education/resources" title="Resources" key="resources">
+                  <NavLink to="/education/resources" title="Resources" key="resources">
                     Other learning resources
                   </NavLink>
                 </li>

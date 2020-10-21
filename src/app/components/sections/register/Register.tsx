@@ -3,7 +3,7 @@ import Section from '../../layout/section/Section';
 import Content from '../../layout/content/Content';
 
 const Register: FC = () => (
-  <Section id="register" title="Register" titleClass="font-xl">
+  <Section id="register" title="Register" titleClass="font-xl" themeClass="theme-tertiary">
     <Content colSize="column">
       <p>Register form goes here</p>
     </Content>

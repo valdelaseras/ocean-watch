@@ -4,7 +4,7 @@ import Content from '../../layout/content/Content';
 import { Outlet } from 'react-router-dom';
 
 const Settings: FC = () => (
-  <Section id="settings" title="Settings" titleClass="font-xl">
+  <Section id="settings" title="Settings" titleClass="font-xl" themeClass="theme-tertiary">
     <Content colSize="column">
       <Outlet />
     </Content>

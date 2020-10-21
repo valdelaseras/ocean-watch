@@ -1,23 +1,40 @@
 .util-bar {
-  width: 100vw;
   box-sizing: border-box;
   padding: 1rem;
-  margin-left: -1rem;
-  background-color: #d4e6e7;
-  margin-bottom: 2rem;
+  background-color: var(--quaternary-color);
   text-align: right;
+}
+
+.util-bar.full-vw {
+  width: 100vw;
+  margin-left: -1rem;
+}
+
+.util-bar.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+.util-bar.compact-ub {
+  padding: 0.5rem 1rem;
+}
+
+.util-list {
+  margin: 0;
 }
 
 .util-list > li {
   padding-right: 0.5rem;
   display: inline-block;
 }
+
 .util-list > li:last-child {
   padding-right: 0;
 }
 
 @media only screen and (min-width: 1024px) {
-  .util-bar {
+  .util-bar.full-vw {
     width: 100%;
     margin-left: 0;
   }

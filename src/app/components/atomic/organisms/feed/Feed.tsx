@@ -9,7 +9,6 @@
 // - are comments on a sighting also a feed? I would think so
 
 import React, { FC } from 'react';
-import UtilBar from '../../molecules/util-bar/UtilBar';
 
 export interface FeedProps {
   title?: string;
@@ -17,7 +16,6 @@ export interface FeedProps {
 
 const Feed: FC<FeedProps> = ({ children }) => (
   <div className="column feed">
-    <UtilBar />
     {/*feed this a 'feed-list' with components*/}
     {children}
   </div>

@@ -126,3 +126,13 @@ button {
 .btn.btn-primary.btn-main:focus-within {
   background-color: var(--quaternary-color-active);
 }
+
+.icon-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon-btn img {
+  padding-left: 0.5rem;
+}
