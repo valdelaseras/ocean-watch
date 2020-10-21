@@ -35,7 +35,7 @@ const Card: FC<CardProps> = ({ colSizeA, colSizeB, className, title, src, imgCla
     </div>
     <div className={colSizeB}>
       <div className="content">{children}</div>
-      <UtilBar className="compact-ub">
+      <UtilBar className="compact-ub align-right">
         <li>
           <button className="btn btn-secondary btn-compact icon-btn">
             Save

@@ -4,7 +4,7 @@ import Content from '../../layout/content/Content';
 import { Outlet } from 'react-router-dom';
 
 const Contact: FC = () => (
-  <Section id="contact" title="Contact" titleClass="font-xl" themeClass="theme-tertiary">
+  <Section id="contact" title="Contact" themeClass="theme-tertiary">
     <Content colSize="column">
       <h3>Contact</h3>
       <ul>

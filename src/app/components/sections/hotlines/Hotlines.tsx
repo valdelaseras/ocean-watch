@@ -3,7 +3,7 @@ import Section from '../../layout/section/Section';
 import Content from '../../layout/content/Content';
 
 const Hotlines: FC = () => (
-  <Section id="about" title="Emergency hotlines" titleClass="font-xl" themeClass="theme-tertiary">
+  <Section id="about" title="Emergency hotlines" themeClass="theme-tertiary">
     <Content colSize="column">
       <h3>In this section:</h3>
       <ul>

@@ -133,7 +133,7 @@ const Dashboard: FC = () => (
           </li>
         </ul>
       </Feed>
-      <UtilBar className="full-vw fixed-bottom">
+      <UtilBar className="full-vw fixed-bottom align-right">
         <li>
           <button className="btn btn-primary" type="button">
             Post sighting

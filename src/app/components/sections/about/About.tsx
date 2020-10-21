@@ -4,7 +4,7 @@ import Content from '../../layout/content/Content';
 import { Outlet } from 'react-router-dom';
 
 const About: FC = () => (
-  <Section id="about" title="About" titleClass="font-xl" themeClass="theme-tertiary">
+  <Section id="about" title="About" themeClass="theme-tertiary">
     <Content colSize="column">
       <h3>In this section:</h3>
       <ul>
