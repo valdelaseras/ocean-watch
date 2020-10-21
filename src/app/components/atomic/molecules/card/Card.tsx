@@ -15,8 +15,8 @@ export interface CardProps {
 
 const Card: FC<CardProps> = ({ colSizeA, colSizeB, className, title, src, imgClass, children }) => (
   // TODO: card is clickable ( I believe in all, else most cases ). Use href? Link?
-    // In any case link to sighting/:id
-    // TODO: must be able to add additional classname
+  // In any case link to sighting/:id
+  // TODO: must be able to add additional classname
   <a className={'card column'}>
     <div className="column">
       <div className="content">
@@ -28,7 +28,7 @@ const Card: FC<CardProps> = ({ colSizeA, colSizeB, className, title, src, imgCla
         {/*TODO: below p must be moved outside of this component and must be rendered as colAContent
           or something so any kind of content can be passed here */}
         <p>Short reporter message of 200 max characters or something, lorem ipsum dolphins</p>
-          { src ? <img src={src} alt={title + ' image'} title={title} className={imgClass}/> : null }
+        {src ? <img src={src} alt={title + ' image'} title={title} className={imgClass} /> : null}
       </div>
     </div>
     <div className={colSizeB}>

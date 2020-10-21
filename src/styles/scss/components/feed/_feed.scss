@@ -1,19 +1,19 @@
 .feed {
-    width: 100vw;
-    margin-left: -1rem;
-    background-color: antiquewhite;
-    padding: 0 1rem 1rem 1rem;
+  width: 100vw;
+  margin-left: -1rem;
+  background-color: seashell;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .feed ul {
-    margin: 0;
+  margin: 0;
 }
 
-@media only screen and ( min-width: 1024px ) {
-    .feed {
-        width: 100%;
-        margin-left: 0;
-        padding-top: 1rem;
-        //padding: 1rem;
-    }
+@media only screen and (min-width: 1024px) {
+  .feed {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 1rem;
+    //padding: 1rem;
+  }
 }

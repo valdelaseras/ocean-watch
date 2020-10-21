@@ -18,23 +18,36 @@
 }
 
 .dropdown label.chevron.chevron-small:after {
-  margin-left: 1rem;
+  position: absolute;
+  right: 0;
+  top: 15px;
 }
 
 .dropdown label {
+  display: block;
+  width: 100%;
+  position: relative;
   font-weight: normal;
 }
 
-label.chevron.chevron-small:after {
-  margin-bottom: 7px;
-}
-
 .dd-checkbox:checked ~ label.chevron.chevron-small:after {
-  margin-bottom: 1px;
+  top: 20px;
 }
 
 .dd-checkbox:checked ~ label.chevron:after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+@media only screen and (min-width: 1024px) {
+  .dropdown label.chevron.chevron-small:after {
+    position: relative;
+    margin-left: 1rem;
+    top: -5px;
+  }
+
+  .dd-checkbox:checked ~ label.chevron.chevron-small:after {
+    top: 0;
+  }
 }
