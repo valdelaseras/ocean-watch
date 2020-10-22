@@ -29,6 +29,8 @@ import ReportIssues from './app/components/sections/contact/issues/ReportIssues'
 import Feedback from './app/components/sections/contact/feedback/Feedback';
 import Mission from './app/components/sections/about/mission/Mission';
 import Faq from './app/components/sections/about/faq/Faq';
+import UserSightings from './app/components/sections/profile/user-sightings/UserSightings';
+import SavedSightings from './app/components/sections/profile/saved-sightings/SavedSightings';
 
 const AppRoutes: FC = () =>
   useRoutes([
@@ -56,7 +58,16 @@ const AppRoutes: FC = () =>
             { path: 'visual', element: <VisualSettings /> },
           ],
         },
-        { path: 'profile', element: <Profile /> },
+        {
+          path: 'profile',
+          element: <Profile />,
+          // TODO: these are the same component, just a feed with different filters but
+          // displayed in different 'views'. Show saved sightings on saved sightings view etc.
+          children: [
+            { path: 'my-sightings', element: <UserSightings /> },
+            { path: 'saved-sightings', element: <SavedSightings /> },
+          ],
+        },
         {
           path: 'about',
           element: <About />,

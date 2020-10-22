@@ -14,8 +14,9 @@ export interface FeedProps {
   title?: string;
 }
 
-const Feed: FC<FeedProps> = ({ children }) => (
+const Feed: FC<FeedProps> = ({ title, children }) => (
   <div className="column feed">
+    {title ? <h2>{title}</h2> : null}
     {/*feed this a 'feed-list' with components*/}
     {children}
   </div>

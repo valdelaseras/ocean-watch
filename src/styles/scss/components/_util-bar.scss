@@ -8,6 +8,10 @@
   text-align: right;
 }
 
+.util-bar h2 {
+  padding: 1rem 0;
+}
+
 .util-bar.full-vw {
   width: 100vw;
   margin-left: -1rem;
@@ -40,5 +44,13 @@
   .util-bar.full-vw {
     width: 100%;
     margin-left: 0;
+  }
+
+  .util-bar.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 0;
+    right: 0;
   }
 }

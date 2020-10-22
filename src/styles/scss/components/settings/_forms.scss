@@ -1,0 +1,22 @@
+#notifications-form label {
+  font-weight: bold;
+}
+
+#notifications-general label,
+#notifications-form .settings-list > li label {
+  font-weight: normal;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+#notifications-form input {
+  margin-right: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  #notifications-advanced {
+    margin-left: 2rem;
+  }
+}

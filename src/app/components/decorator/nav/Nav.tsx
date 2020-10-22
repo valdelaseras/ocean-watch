@@ -22,12 +22,27 @@ const Nav: FC = () => (
       <div className="slide-in-menu">
         <ul className="menu-list">
           <li className="user-space">
-            <NavLink to="/profile" title="Profile" key="profile">
-              Profile
-            </NavLink>
+            <DropdownCheckbox id="profile" title="Profile">
+              <ul className="submenu-list">
+                <li>
+                  <NavLink to="/profile" title="Profile" key="profile">
+                    Profile overview
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/profile/my-sightings" title="My sightings" key="my-sightings">
+                    My sightings
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/profile/saved-sightings" title="Saved sightings" key="saved-sightings">
+                    Saved sightings
+                  </NavLink>
+                </li>
+              </ul>
+            </DropdownCheckbox>
           </li>
           <li className="user-space">
-            {/*TODO: styling for main settings title is a bit off. Profile for example is an anchor, settings a label */}
             <DropdownCheckbox id="settings" title="Settings">
               <ul className="submenu-list">
                 <li>

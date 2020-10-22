@@ -8,9 +8,25 @@ export interface UserDetailsProps {
   rank: string;
   sightings: string;
   region: string;
+  biomes: string;
+  notifications: string;
+  givenVerifications: string;
+  receivedVerifications: string;
 }
 
-const UserDetails: FC<UserDetailsProps> = ({ id, imgSrc, username, email, rank, sightings, region }) => (
+const UserDetails: FC<UserDetailsProps> = ({
+  id,
+  imgSrc,
+  username,
+  email,
+  rank,
+  sightings,
+  region,
+  biomes,
+  notifications,
+  givenVerifications,
+  receivedVerifications,
+}) => (
   <div className="user-overview">
     <div className="column">
       <div className="user-image flex-center">
@@ -56,8 +72,24 @@ const UserDetails: FC<UserDetailsProps> = ({ id, imgSrc, username, email, rank, 
                 <td>{sightings}</td>
               </tr>
               <tr>
+                <th>Verifications given</th>
+                <td>{givenVerifications}</td>
+              </tr>
+              <tr>
+                <th>Verifications received</th>
+                <td>{receivedVerifications}</td>
+              </tr>
+              <tr>
                 <th>Region</th>
                 <td>{region}</td>
+              </tr>
+              <tr>
+                <th>Biomes</th>
+                <td>{biomes}</td>
+              </tr>
+              <tr>
+                <th>Notifications</th>
+                <td>{notifications}</td>
               </tr>
             </tbody>
           </table>

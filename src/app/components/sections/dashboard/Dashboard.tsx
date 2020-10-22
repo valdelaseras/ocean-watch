@@ -27,6 +27,7 @@ const genericSortingOptions = [
 const biomeSortingOptions = [
   { id: 'all-biomes', value: 'all-biomes', title: 'All biomes' },
   { id: 'sky', value: 'sky', title: 'Sky' },
+  { id: 'coast', value: 'coast', title: 'Coast' },
   { id: 'surface', value: 'surface', title: 'Surface' },
   { id: 'below-surface', value: 'below-surface', title: 'Below surface' },
   { id: 'ocean-floor', value: 'ocean-floor', title: 'Ocean floor' },
@@ -69,7 +70,7 @@ const Dashboard: FC = () => (
         </UtilBar>
         <ul className="feed-list">
           <li>
-            <Card colSizeA="column four a" colSizeB="column four c" title="Southern Right Whale">
+            <Card utilBar={true} colSizeA="column four a" colSizeB="column four c" title="Southern Right Whale">
               {/*TODO: maybe need a more responsive solution instead of a table*/}
               <table>
                 <tbody>
@@ -87,6 +88,10 @@ const Dashboard: FC = () => (
                     </td>
                   </tr>
                   <tr>
+                    <th>Biome</th>
+                    <td>Below the surface</td>
+                  </tr>
+                  <tr>
                     <th>Verifications</th>
                     <td>0</td>
                   </tr>
@@ -101,7 +106,7 @@ const Dashboard: FC = () => (
             </Card>
           </li>
           <li>
-            <Card colSizeA="column four a" colSizeB="column four c" title="Common Dolphins">
+            <Card utilBar={true} colSizeA="column four a" colSizeB="column four c" title="Common Dolphins">
               {/*TODO: maybe need a more responsive solution instead of a table*/}
               <table>
                 <tbody>
@@ -120,6 +125,10 @@ const Dashboard: FC = () => (
                     </td>
                   </tr>
                   <tr>
+                    <th>Biome</th>
+                    <td>Surface</td>
+                  </tr>
+                  <tr>
                     <th>Verifications</th>
                     <td>[ 16:37 ] 8</td>
                   </tr>
@@ -135,7 +144,7 @@ const Dashboard: FC = () => (
       </Feed>
       <UtilBar className="full-vw fixed-bottom align-right">
         <li>
-          <button className="btn btn-primary" type="button">
+          <button className="btn btn-primary" id="post-sighting-btn" type="button">
             Post sighting
           </button>
         </li>

@@ -4,7 +4,6 @@
 
 import React, { FC } from 'react';
 import UtilBar from '../util-bar/UtilBar';
-import Select from '../../atoms/select/Select';
 
 export interface CardProps {
   colSizeA: string;
@@ -13,9 +12,10 @@ export interface CardProps {
   title: string;
   src?: string;
   imgClass?: string;
+  utilBar: boolean;
 }
 
-const Card: FC<CardProps> = ({ colSizeA, colSizeB, className, title, src, imgClass, children }) => (
+const Card: FC<CardProps> = ({ utilBar, colSizeA, colSizeB, className, title, src, imgClass, children }) => (
   // TODO: card is clickable ( I believe in all, else most cases ). Use href? Link?
   // In any case link to sighting/:id
   // TODO: must be able to add additional classname
@@ -35,32 +35,41 @@ const Card: FC<CardProps> = ({ colSizeA, colSizeB, className, title, src, imgCla
     </div>
     <div className={colSizeB}>
       <div className="content">{children}</div>
-      <UtilBar className="compact-ub align-right">
-        <li>
-          <button className="btn btn-secondary btn-compact icon-btn">
-            Save
-            <img src="/assets/icons/heart.svg" alt="Heart icon" title="Add to favorites" className="small-icon" />
-          </button>
-        </li>
-        <li>
-          <button className="btn btn-secondary btn-compact icon-btn">
-            Follow
-            <img
-              src="/assets/icons/bell.svg"
-              alt="Follow sighting icon"
-              title="Follow sighting"
-              className="small-icon"
-            />
-          </button>
-        </li>
-        <li>
-          <button className="btn btn-secondary btn-compact icon-btn">
-            Verify
-            <img src="/assets/icons/check.svg" alt="Verification icon" title="Verify sighting" className="small-icon" />
-          </button>
-        </li>
-      </UtilBar>
     </div>
+    {utilBar ? (
+      <div className="column">
+        <UtilBar className="compact-ub align-right">
+          <li>
+            <button className="btn btn-secondary btn-compact icon-btn">
+              Save
+              <img src="/assets/icons/heart.svg" alt="Heart icon" title="Add to favorites" className="small-icon" />
+            </button>
+          </li>
+          <li>
+            <button className="btn btn-secondary btn-compact icon-btn">
+              Follow
+              <img
+                src="/assets/icons/bell.svg"
+                alt="Follow sighting icon"
+                title="Follow sighting"
+                className="small-icon"
+              />
+            </button>
+          </li>
+          <li>
+            <button className="btn btn-secondary btn-compact icon-btn">
+              Verify
+              <img
+                src="/assets/icons/check.svg"
+                alt="Verification icon"
+                title="Verify sighting"
+                className="small-icon"
+              />
+            </button>
+          </li>
+        </UtilBar>
+      </div>
+    ) : null}
   </a>
 );
 

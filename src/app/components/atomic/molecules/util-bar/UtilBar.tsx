@@ -10,11 +10,13 @@
 import React, { FC } from 'react';
 
 export interface UtilBarProps {
-  className: string;
+  className?: string;
+  title?: string;
 }
 
-const UtilBar: FC<UtilBarProps> = ({ className, children }) => (
+const UtilBar: FC<UtilBarProps> = ({ title, className, children }) => (
   <div className={'util-bar ' + className}>
+    {title ? <h2>{title}</h2> : null}
     <ul className="util-list">
       {/*list items with children utility elements here*/}
       {children}
