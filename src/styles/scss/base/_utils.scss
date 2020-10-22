@@ -1,0 +1,25 @@
+.desktop-only {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: inline-block;
+  }
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,56 @@
+.util-bar {
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: var(--quaternary-color);
+}
+
+.util-bar.align-right {
+  text-align: right;
+}
+
+.util-bar h2 {
+  padding: 1rem 0;
+}
+
+.util-bar.full-vw {
+  width: 100vw;
+  margin-left: -1rem;
+}
+
+.util-bar.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+.util-bar.compact-ub {
+  padding: 0.5rem 1rem;
+}
+
+.util-list {
+  margin: 0;
+}
+
+.util-list > li {
+  padding-right: 0.5rem;
+  display: inline-block;
+}
+
+.util-list > li:last-child {
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .util-bar.full-vw {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .util-bar.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

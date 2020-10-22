@@ -1,0 +1,23 @@
+.settings-form label {
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.settings-form .settings-list label {
+  font-weight: normal;
+}
+
+.settings-form input {
+  margin-right: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  #notifications-advanced {
+    margin-left: 2rem;
+  }
+}
+
+//TODO: On desktop, chevrons are a little misplaced

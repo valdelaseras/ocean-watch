@@ -1,0 +1,53 @@
+//TODO: very basic now, but obviously need to make it nice with beautiful transitions,
+//animations etc
+
+.dd-checkbox {
+  display: none;
+}
+
+.dd-checkbox:checked ~ .dd-panel {
+  visibility: visible;
+  height: auto;
+  width: 100%;
+}
+
+.dd-panel {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.dropdown label.chevron.chevron-small:after {
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+.dropdown label {
+  display: block;
+  width: 100%;
+  position: relative;
+  font-weight: normal;
+}
+
+.dd-checkbox:checked ~ label.chevron.chevron-small:after {
+  top: 20px;
+}
+
+.dd-checkbox:checked ~ label.chevron:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@media only screen and (min-width: 1024px) {
+  .dropdown label.chevron.chevron-small:after {
+    position: relative;
+    margin-left: 1rem;
+    top: -5px;
+  }
+
+  .dd-checkbox:checked ~ label.chevron.chevron-small:after {
+    top: 0;
+  }
+}

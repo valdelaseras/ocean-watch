@@ -1,0 +1,19 @@
+a.card {
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--secondary-color-alpha);
+}
+
+a.card:hover {
+  cursor: pointer;
+}
+
+a.card h2 {
+  color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 1024px) {
+  .card .content {
+    padding: 1rem;
+  }
+}

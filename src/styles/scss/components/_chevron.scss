@@ -1,0 +1,63 @@
+/* @start chevron, base chevron points downwards */
+.chevron::after {
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  content: '';
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  width: 18px;
+  transition: 100ms;
+}
+/* @end chevron */
+
+/* @start chevron up*/
+.chevron-up::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* @end chevron up */
+
+/* @start chevron left */
+.chevron-left::after {
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  margin-left: 5px;
+}
+/* @end chevron left */
+
+/* @start chevron right */
+.chevron-right::after {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-right: 5px;
+}
+/* @start chevron right */
+
+/* @start chevron medium */
+.chevron-medium::after {
+  border-width: 3px 3px 0 0;
+  height: 12px;
+  width: 12px;
+}
+/* @end chevron medium */
+
+/* @start chevron small */
+.chevron-small::after {
+  width: 9px;
+  height: 9px;
+  top: 0;
+}
+/* @end chevron small */
+
+/*@start chevron hover*/
+.chevron:hover {
+  cursor: pointer;
+}
+/*@end chevron hover*/
