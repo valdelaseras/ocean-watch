@@ -1,17 +1,16 @@
-#notifications-form label {
+.settings-form label {
   font-weight: bold;
-}
-
-#notifications-general label,
-#notifications-form .settings-list > li label {
-  font-weight: normal;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
 }
 
-#notifications-form input {
+.settings-form .settings-list label {
+  font-weight: normal;
+}
+
+.settings-form input {
   margin-right: 0;
 }
 
@@ -20,3 +19,5 @@
     margin-left: 2rem;
   }
 }
+
+//TODO: On desktop, chevrons are a little misplaced

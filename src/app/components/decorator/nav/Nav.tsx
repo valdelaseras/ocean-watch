@@ -46,13 +46,13 @@ const Nav: FC = () => (
             <DropdownCheckbox id="settings" title="Settings">
               <ul className="submenu-list">
                 <li>
-                  <NavLink to="/settings/notifications" title="Notifications" key="notifications">
-                    Notifications
+                  <NavLink to="/settings/subscriptions" title="Subscriptions" key="subscriptions">
+                    Subscriptions
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/settings/subscriptions" title="Subscriptions" key="subscriptions">
-                    Subscriptions
+                  <NavLink to="/settings/notifications" title="Notifications" key="notifications">
+                    Notifications
                   </NavLink>
                 </li>
                 <li>

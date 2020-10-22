@@ -8,11 +8,29 @@ import Form from '../../../atomic/organisms/form/Form';
 // import { Link } from 'react-router-dom';
 
 // duplicate on dashboard
-const distanceSortingOptions = [
+const distanceFilterOptions = [
   { id: '5km', value: '5km', title: 'Within 5km' },
   { id: '10km', value: '10km', title: 'Within 10km' },
   { id: '25km', value: '25km', title: 'Within 25km' },
   { id: 'all-distances', value: 'all distances', title: 'All' },
+];
+
+const biomeFilterOptions = [
+  { id: 'all-biomes', name: 'all-biomes', title: 'All biomes', required: false, checked: false },
+  { id: 'sky', name: 'sky', title: 'Sky', required: false, checked: false },
+  { id: 'coast', name: 'coast', title: 'Coast', required: false, checked: false },
+  { id: 'surface', name: 'surface', title: 'Surface', required: false, checked: false },
+  { id: 'below-surface', name: 'below-surface', title: 'Below surface', required: false, checked: false },
+  { id: 'ocean-floor', name: 'ocean-floor', title: 'Ocean floor', required: false, checked: false },
+  { id: 'tide-pools', name: 'tide-pools', title: 'Tide pools', required: false, checked: false },
+];
+
+const speciesFilterOptions = [
+  { id: 'dolphins', name: 'dolphins', title: 'Dolphins', required: true, checked: true },
+  { id: 'whales', name: 'whales', title: 'Whales', required: false, checked: false },
+  { id: 'seals', name: 'seals', title: 'Seals', required: false, checked: false },
+  { id: 'invertebrates', name: 'invertebrates', title: 'Invertebrates', required: false, checked: false },
+  { id: 'sea-birds', name: 'sea-birds', title: 'Sea birds', required: false, checked: false },
 ];
 
 // TODO: displayed options within these formfields must be based on user subscription settings and
@@ -27,8 +45,7 @@ const Notifications: FC = () => (
       relevant to <span className="underlined">your subscriptions</span>. Below you may choose to customize your
       notifications further.
     </p>
-    {/*TODO: turn into form, formgroups, formfields*/}
-    <Form id="notifications-form">
+    <Form id="notifications-form" className="settings-form">
       <div className="column">
         <div className="column three">
           <FormGroup id="notifications-general" title="General">
@@ -59,63 +76,34 @@ const Notifications: FC = () => (
             <FormField valid={true}>
               <DropdownCheckbox id="pn-biomes" title="Biomes">
                 <ul className="settings-list">
-                  <li>
-                    <Checkbox title="All biomes" id="pn-all-biomes" name="all-biomes" required={false} checked={true} />
-                  </li>
-                  <li>
-                    <Checkbox title="Sky" id="pn-biome-sky" name="sky-biome" required={false} checked={true} />
-                  </li>
-                  <li>
-                    <Checkbox title="Coast" id="pn-biome-coast" name="coast-biome" required={false} checked={true} />
-                  </li>
-                  <li>
-                    <Checkbox
-                      title="Surface"
-                      id="pn-biome-surface"
-                      name="surface-biome"
-                      required={false}
-                      checked={true}
-                    />
-                  </li>
-                  <li>
-                    <Checkbox
-                      title="Below surface"
-                      id="pn-biome-below-surface"
-                      name="below-surface-biome"
-                      required={false}
-                      checked={true}
-                    />
-                  </li>
-                  <li>
-                    <Checkbox
-                      title="Ocean floor"
-                      id="pn-biome-floor"
-                      name="floor-biome"
-                      required={false}
-                      checked={true}
-                    />
-                  </li>
-                  <li>
-                    <Checkbox title="Tide pools" id="pn-biome-tide" name="tide-biome" required={false} checked={true} />
-                  </li>
+                  {biomeFilterOptions.map((biomeFilterOption) => (
+                    <li key={biomeFilterOption.id}>
+                      <Checkbox
+                        title={biomeFilterOption.title}
+                        id={biomeFilterOption.id}
+                        name={biomeFilterOption.name}
+                        required={biomeFilterOption.required}
+                        checked={biomeFilterOption.checked}
+                      />
+                    </li>
+                  ))}
                 </ul>
               </DropdownCheckbox>
             </FormField>
             <FormField valid={true}>
               <DropdownCheckbox id="pn-species" title="Species">
                 <ul className="settings-list">
-                  <li>
-                    <Checkbox
-                      title="All species"
-                      id="pn-all-species"
-                      name="all-species"
-                      required={false}
-                      checked={true}
-                    />
-                  </li>
-                  <li>
-                    <p>...Species go here ( in family probably or this list will be super long )</p>
-                  </li>
+                  {speciesFilterOptions.map((speciesFilterOption) => (
+                    <li key={speciesFilterOption.id}>
+                      <Checkbox
+                        title={speciesFilterOption.title}
+                        id={speciesFilterOption.id}
+                        name={speciesFilterOption.name}
+                        required={speciesFilterOption.required}
+                        checked={speciesFilterOption.checked}
+                      />
+                    </li>
+                  ))}
                 </ul>
               </DropdownCheckbox>
             </FormField>
@@ -128,7 +116,7 @@ const Notifications: FC = () => (
                       required={false}
                       defaultValue="Within 10km"
                       name="pn-distance"
-                      children={distanceSortingOptions}
+                      children={distanceFilterOptions}
                     />
                   </li>
                 </ul>
