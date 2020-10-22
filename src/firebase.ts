@@ -25,13 +25,11 @@ const askUserPermission = async (): Promise<NotificationPermission> => {
 /**
  * Initialise Firebase App as well as Messaging and Analytics.
  */
-export const initialiseFirebase = (): void => {
+const initialiseFirebase = (): void => {
   firebase.initializeApp(firebaseConfig);
-  initialiseFirebaseMessaging();
-  initialiseAnalytics();
 
   if (isPushNotificationSupported()) {
-    registerServiceWorker('/firebase-messaging-sw.js')
+    registerServiceWorker('/firebase-initialiseMessaging-sw.js')
       .then(function (registration) {
         console.log('Registration successful, scope is:', registration.scope);
       })
@@ -44,7 +42,7 @@ export const initialiseFirebase = (): void => {
 /**
  * Initialise Firebase Messaging if the user grants permission for push notifications.
  */
-const initialiseFirebaseMessaging = () => {
+const initialiseMessaging = () => {
   askUserPermission()
     .then(async () => {
       // Initialise Firebase Messaging
@@ -66,4 +64,16 @@ const initialiseFirebaseMessaging = () => {
     });
 };
 
-export const initialiseAnalytics = firebase.analytics;
+export const authUiConfig = {
+  // Popup signin flow rather than redirect flow.
+  signInFlow: 'popup',
+  // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+  signInSuccessUrl: '/',
+  // We will display Google and Facebook as auth providers.
+  signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID],
+};
+
+initialiseFirebase();
+initialiseMessaging();
+export const auth = firebase.auth();
+export const analytics = firebase.analytics();
