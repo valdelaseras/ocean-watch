@@ -12,7 +12,7 @@ const Profile: FC = () => (
         imgSrc="/assets/images/dolphin.png"
         username="Empress"
         email="dolphins@sea.co.nz"
-        rank="Asteroid"
+        points="124"
         sightings="2"
         givenVerifications="16"
         receivedVerifications="27"
