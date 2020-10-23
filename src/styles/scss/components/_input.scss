@@ -1,0 +1,37 @@
+input {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid var(--secondary-color);
+  box-sizing: border-box;
+  background-color: transparent;
+  color: var(--secondary-color);
+  transition: all 100ms;
+}
+
+input[type='number'],
+input[type='text'] {
+  width: 100%;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+input:focus,
+input:focus-within,
+input:active,
+select:focus,
+select:focus-within,
+select:active {
+  border-color: cornflowerblue;
+}
+
+input.invalid,
+input.invalid:hover,
+input.invalid:active,
+input.invalid:focus,
+input.invalid:focus-within {
+  border-bottom-color: red;
+}
