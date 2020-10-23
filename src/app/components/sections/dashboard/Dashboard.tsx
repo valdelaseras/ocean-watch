@@ -129,7 +129,7 @@ const Dashboard: FC = () => (
         <ul className="feed-list">
           {feedListItems.map((feedListItem) => (
             <li key={feedListItem.id}>
-              <Card utilBar={true} colSizeA="column four a" colSizeB="column four c" title={feedListItem.title}>
+              <Card utilBar={true} colSizeA="column two" colSizeB="column two" title={feedListItem.title}>
                 <table>
                   <tbody>
                     <tr>
