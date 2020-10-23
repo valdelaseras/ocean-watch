@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 interface FieldsetProps {
-  className: string;
+  className?: string;
   title: string;
   children: any;
 }

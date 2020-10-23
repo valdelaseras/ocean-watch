@@ -25,12 +25,14 @@ const biomeFilterOptions = [
   { id: 'tide-pools', name: 'tide-pools', title: 'Tide pools', required: false, checked: false },
 ];
 
+// TODO: obviously need to think about this list properly
 const speciesFilterOptions = [
   { id: 'dolphins', name: 'dolphins', title: 'Dolphins', required: true, checked: true },
   { id: 'whales', name: 'whales', title: 'Whales', required: false, checked: false },
   { id: 'seals', name: 'seals', title: 'Seals', required: false, checked: false },
   { id: 'invertebrates', name: 'invertebrates', title: 'Invertebrates', required: false, checked: false },
   { id: 'sea-birds', name: 'sea-birds', title: 'Sea birds', required: false, checked: false },
+  { id: 'other', name: 'other', title: 'Other', required: false, checked: false },
 ];
 
 // TODO: displayed options within these formfields must be based on user subscription settings and
@@ -112,7 +114,7 @@ const Notifications: FC = () => (
                 <ul className="settings-list">
                   <li>
                     <Select
-                      id="pn-distance"
+                      id="pn-distance-select"
                       required={false}
                       defaultValue="Within 10km"
                       name="pn-distance"

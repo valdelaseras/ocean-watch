@@ -29,6 +29,16 @@ const northIslandRegions = [
   { id: 'wellington', name: 'wellington-region', title: 'Wellington', required: false, checked: true },
 ];
 
+const biomes = [
+  { id: 'all-biomes', name: 'all-biomes', title: 'All biomes', required: false, checked: true },
+  { id: 'sky', name: 'sky', title: 'Sky', required: false, checked: true },
+  { id: 'coast', name: 'coast', title: 'Coast', required: false, checked: true },
+  { id: 'surface', name: 'surface', title: 'Surface', required: false, checked: true },
+  { id: 'below-surface', name: 'below-surface', title: 'Below surface', required: false, checked: true },
+  { id: 'ocean-floor', name: 'ocean-floor', title: 'Ocean floor', required: false, checked: true },
+  { id: 'tide-pools', name: 'tide-pools', title: 'Tide pools', required: false, checked: true },
+];
+
 const southIslandRegions = [
   { id: 'tasman', name: 'tasman-region', title: 'Tasman', required: false, checked: false },
   { id: 'nelson', name: 'nelson-region', title: 'Nelson', required: false, checked: false },
@@ -86,6 +96,23 @@ const Subscriptions: FC = () => (
                         name={southIslandRegion.name}
                         required={southIslandRegion.required}
                         checked={southIslandRegion.checked}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </DropdownCheckbox>
+            </FormField>
+            <FormField valid={true}>
+              <DropdownCheckbox id="subscriptions-biomes" title="Biomes">
+                <ul className="settings-list">
+                  {biomes.map((biome) => (
+                    <li key={biome.id}>
+                      <Checkbox
+                        title={biome.title}
+                        id={biome.id}
+                        name={biome.name}
+                        required={biome.required}
+                        checked={biome.checked}
                       />
                     </li>
                   ))}

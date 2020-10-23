@@ -1,0 +1,15 @@
+.tip-panel {
+  position: relative;
+}
+
+.close-panel {
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color-alpha);
+  border-radius: 50%;
+}

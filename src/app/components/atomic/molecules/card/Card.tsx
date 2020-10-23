@@ -26,15 +26,15 @@ const Card: FC<CardProps> = ({ utilBar, colSizeA, colSizeB, className, title, sr
       </div>
     </div>
     <div className={colSizeA}>
+      <div className="content">{children}</div>
+    </div>
+    <div className={colSizeB}>
       <div className="content">
-        {/*TODO: below p must be moved outside of this component and must be rendered as colAContent
+        {/*TODO: below p must be moved outside of this component and must be rendered as colBContent
           or something so any kind of content can be passed here */}
         <p>Short reporter message of 200 max characters or something, lorem ipsum dolphins</p>
         {src ? <img src={src} alt={title + ' image'} title={title} className={imgClass} /> : null}
       </div>
-    </div>
-    <div className={colSizeB}>
-      <div className="content">{children}</div>
     </div>
     {utilBar ? (
       <div className="column">

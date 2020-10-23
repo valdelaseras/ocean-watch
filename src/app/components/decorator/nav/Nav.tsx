@@ -22,6 +22,12 @@ const Nav: FC = () => (
       <div className="slide-in-menu">
         <ul className="menu-list">
           <li className="user-space">
+            {/*TODO: not compiling when I try to add exact or exact={true}? */}
+            <NavLink to="/" title="Sightings" key="sightings">
+              Sightings
+            </NavLink>
+          </li>
+          <li className="user-space">
             <DropdownCheckbox id="profile" title="Profile">
               <ul className="submenu-list">
                 <li>
