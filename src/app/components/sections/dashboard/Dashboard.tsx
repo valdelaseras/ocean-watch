@@ -6,7 +6,7 @@ import Feed from '../../atomic/organisms/feed/Feed';
 import UtilBar from '../../atomic/molecules/util-bar/UtilBar';
 import Select from '../../atomic/atoms/select/Select';
 
-// Again seems to be issues with router version and @types like with 'exact' attribute on navlinks ??
+// Again seems to be issues with router version and @types like with 'exact' attribute on navLinks?
 // import { useHistory } from 'react-router-dom';
 // let history = useHistory();
 //

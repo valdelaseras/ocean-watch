@@ -5,7 +5,6 @@ import DropdownCheckbox from '../../../atomic/molecules/dropdown-checkbox/Dropdo
 import Select from '../../../atomic/atoms/select/Select';
 import FormGroup from '../../../atomic/molecules/form/form-group/FormGroup';
 import Form from '../../../atomic/organisms/form/Form';
-// import { Link } from 'react-router-dom';
 
 // duplicate on dashboard
 const distanceFilterOptions = [
