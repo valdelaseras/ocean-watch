@@ -43,79 +43,79 @@ const SavedSightings: FC = () => (
         />
       </li>
     </UtilBar>
-    <ul className="feed-list">
-      <li>
-        <Card utilBar={false} colSizeA="column four a" colSizeB="column four c" title="Leopard seal">
-          {/*TODO: maybe need a more responsive solution instead of a table*/}
-          <table>
-            <tbody>
-              <tr>
-                <th>Reported</th>
-                <td>[ 18:02 ] 20/10/2020</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>
-                  [ 18:02 ]{' '}
-                  <a className="underlined" href="">
-                    <img src="/assets/icons/gm-pin.svg" alt="google maps pin" className="small-icon" /> Owhiro Bay
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th>Biome</th>
-                <td>Coast</td>
-              </tr>
-              <tr>
-                <th>Verifications</th>
-                <td>25</td>
-              </tr>
-              <tr>
-                <th>Latest status</th>
-                <td>Out of sight</td>
-              </tr>
-            </tbody>
-          </table>
-          {/*Utility bar goes here with 'hotkeys' to acknowledge sighting. On click shows a modal*/}
-          {/* to user to confirm they are indeed looking at the sighting in question in real life*/}
-        </Card>
-      </li>
-      <li>
-        <Card utilBar={false} colSizeA="column four a" colSizeB="column four c" title="Nudibranch">
-          {/*TODO: maybe need a more responsive solution instead of a table*/}
-          <table>
-            <tbody>
-              <tr>
-                <th>Reported </th>
-                <td>[ 16:15 ] 20/10/2020</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>
-                  [ 16:37 ]{' '}
-                  <a className="underlined" href="">
-                    <img src="/assets/icons/gm-pin.svg" alt="google maps pin" className="small-icon" /> Taputeranga
-                    Marine Reserve
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th>Biome</th>
-                <td>Tide pools</td>
-              </tr>
-              <tr>
-                <th>Verifications</th>
-                <td>[ 16:37 ] 2</td>
-              </tr>
-              <tr>
-                <th>Latest status</th>
-                <td>[ 16:44 ] Out of sight</td>
-              </tr>
-            </tbody>
-          </table>
-        </Card>
-      </li>
-    </ul>
+    {/*<ul className="feed-list">*/}
+    {/*  <li>*/}
+    {/*    <Card utilBar={false} colSizeA="column four a" colSizeB="column four c" title="Leopard seal">*/}
+    {/*      /!*TODO: maybe need a more responsive solution instead of a table*!/*/}
+    {/*      <table>*/}
+    {/*        <tbody>*/}
+    {/*          <tr>*/}
+    {/*            <th>Reported</th>*/}
+    {/*            <td>[ 18:02 ] 20/10/2020</td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Location</th>*/}
+    {/*            <td>*/}
+    {/*              [ 18:02 ]{' '}*/}
+    {/*              <a className="underlined" href="">*/}
+    {/*                <img src="/assets/icons/gm-pin.svg" alt="google maps pin" className="small-icon" /> Owhiro Bay*/}
+    {/*              </a>*/}
+    {/*            </td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Biome</th>*/}
+    {/*            <td>Coast</td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Verifications</th>*/}
+    {/*            <td>25</td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Latest status</th>*/}
+    {/*            <td>Out of sight</td>*/}
+    {/*          </tr>*/}
+    {/*        </tbody>*/}
+    {/*      </table>*/}
+    {/*      /!*Utility bar goes here with 'hotkeys' to acknowledge sighting. On click shows a modal*!/*/}
+    {/*      /!* to user to confirm they are indeed looking at the sighting in question in real life*!/*/}
+    {/*    </Card>*/}
+    {/*  </li>*/}
+    {/*  <li>*/}
+    {/*    <Card utilBar={false} colSizeA="column four a" colSizeB="column four c" title="Nudibranch">*/}
+    {/*      /!*TODO: maybe need a more responsive solution instead of a table*!/*/}
+    {/*      <table>*/}
+    {/*        <tbody>*/}
+    {/*          <tr>*/}
+    {/*            <th>Reported </th>*/}
+    {/*            <td>[ 16:15 ] 20/10/2020</td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Location</th>*/}
+    {/*            <td>*/}
+    {/*              [ 16:37 ]{' '}*/}
+    {/*              <a className="underlined" href="">*/}
+    {/*                <img src="/assets/icons/gm-pin.svg" alt="google maps pin" className="small-icon" /> Taputeranga*/}
+    {/*                Marine Reserve*/}
+    {/*              </a>*/}
+    {/*            </td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Biome</th>*/}
+    {/*            <td>Tide pools</td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Verifications</th>*/}
+    {/*            <td>[ 16:37 ] 2</td>*/}
+    {/*          </tr>*/}
+    {/*          <tr>*/}
+    {/*            <th>Latest status</th>*/}
+    {/*            <td>[ 16:44 ] Out of sight</td>*/}
+    {/*          </tr>*/}
+    {/*        </tbody>*/}
+    {/*      </table>*/}
+    {/*    </Card>*/}
+    {/*  </li>*/}
+    {/*</ul>*/}
   </Feed>
 );
 

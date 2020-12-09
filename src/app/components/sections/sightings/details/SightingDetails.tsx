@@ -7,8 +7,9 @@ const SightingDetails: FC = () => {
   const { id } = useParams();
 
   return (
-    <Section id="sighting-details" title={id} titleClass="font-xl">
+    <Section id="sighting-details" titleClass="font-xl">
       <Content colSize="column">
+        <p>Sighting ID: {id}</p>
         <p>Sighting details go here</p>
       </Content>
     </Section>

@@ -27,11 +27,13 @@ label {
   font-weight: bold;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.5rem;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: calc(2.5rem / 1.61803398875);
 }
 
