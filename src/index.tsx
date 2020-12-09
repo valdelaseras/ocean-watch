@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/scss/index.scss';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { initialiseFirebase } from './firebase-configuration';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <AppRoutes />
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );

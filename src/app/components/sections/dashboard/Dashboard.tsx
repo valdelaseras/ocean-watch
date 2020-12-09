@@ -5,14 +5,21 @@ import Card from '../../atomic/molecules/card/Card';
 import Feed from '../../atomic/organisms/feed/Feed';
 import UtilBar from '../../atomic/molecules/util-bar/UtilBar';
 import Select from '../../atomic/atoms/select/Select';
+import { useNavigate} from "react-router";
 
-// Again seems to be issues with router version and @types like with 'exact' attribute on navLinks?
-// import { useHistory } from 'react-router-dom';
-// let history = useHistory();
-//
-// const clickHandler = () => {
-//   history.push( '/sightings/new' );
-// };
+const PostSightingButton: FC = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/sighting/new");
+  };
+
+  return (
+      <button onClick={ handleClick }  className="btn btn-primary" id="post-sighting-btn" type="button">
+        Post sighting
+      </button>
+  )
+};
 
 // TODO: if sighting is <TODAY> the card should be a different color
 const Dashboard: FC = () => (
@@ -89,9 +96,7 @@ const Dashboard: FC = () => (
       </Feed>
       <UtilBar className="full-vw fixed-bottom align-right">
         <li>
-          <button className="btn btn-primary" id="post-sighting-btn" type="button">
-            Post sighting
-          </button>
+          <PostSightingButton/>
         </li>
       </UtilBar>
     </Content>

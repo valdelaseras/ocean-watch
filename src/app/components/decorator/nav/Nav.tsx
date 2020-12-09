@@ -15,7 +15,7 @@ const Nav: FC = () => {
   return (
     <nav className="nav">
       <div className="branding-logo">
-        <NavLink to="/" title="Ocean Watch" key="branding-link">
+        <NavLink to="/dashboard" title="Ocean Watch" key="branding-link">
           Ocean Watch
         </NavLink>
       </div>
@@ -29,8 +29,7 @@ const Nav: FC = () => {
         <div className="slide-in-menu">
           <ul className="menu-list">
             <li className="user-space">
-              {/*TODO: not compiling when I try to add exact or exact={true}? */}
-              <NavLink to="/" title="Sightings" key="sightings" onClick={() => closeMenu()}>
+              <NavLink to="/dashboard" title="Sightings" key="sightings" onClick={() => closeMenu()}>
                 Sightings
               </NavLink>
             </li>
