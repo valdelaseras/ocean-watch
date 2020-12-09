@@ -23,7 +23,7 @@ const SubmitSightingButton: FC = () => {
 
   return (
       // TODO: disable on invalid form etc.
-      <button onClick={ handleClick }  className="btn btn-primary" id="submit-sighting-btn" type="button">
+      <button onClick={ handleClick } className="btn btn-primary" id="submit-sighting-btn" type="button">
         Submit
       </button>
   )

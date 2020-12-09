@@ -129,8 +129,9 @@ button {
 
 .icon-btn {
   display: flex;
+  min-width: 100px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .icon-btn img {
