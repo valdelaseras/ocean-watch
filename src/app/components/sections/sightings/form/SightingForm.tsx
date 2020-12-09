@@ -16,14 +16,10 @@ import { useNavigate } from 'react-router';
 const SubmitSightingButton: FC = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    // TODO: redirect to dashboard + /post-id and maybe some popup message with 'success'
-    navigate('/dashboard');
-  };
-
   return (
     // TODO: disable on invalid form etc.
-    <button onClick={handleClick} className="btn btn-primary" id="submit-sighting-btn" type="button">
+    // TODO: navigate to dashboard + post ID so user can see their own post
+    <button onClick={ () => navigate('/dashboard')} className="btn btn-primary" id="submit-sighting-btn" type="button">
       Submit
     </button>
   );

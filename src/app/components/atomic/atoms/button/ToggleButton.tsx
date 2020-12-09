@@ -24,7 +24,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({ type, btnClass, disabled, childre
 
   return (
     <button type={type} onClick={toggle} className={'btn ' + btnClass} disabled={disabled}>
-      {spinnerEnabled ? (
+      { spinnerEnabled ? (
         <img src="/assets/icons/bell.svg" alt="Heart icon" title="Add to favorites" className="small-icon" />
       ) : enabled ? (
         children.enabled

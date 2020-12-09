@@ -10,12 +10,8 @@ import { useNavigate } from 'react-router';
 const PostSightingButton: FC = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/sighting/new');
-  };
-
   return (
-    <button onClick={handleClick} className="btn btn-primary" id="post-sighting-btn" type="button">
+    <button onClick={ () => navigate('/sighting/new')} className="btn btn-primary" id="post-sighting-btn" type="button">
       Post sighting
     </button>
   );
@@ -140,6 +136,7 @@ const biomeSortingOptions = [
 ];
 
 // TODO: also add location google maps link & user message
+// This should eventually go into a sighting model anyway
 const feedListItems = [
   {
     id: '1',
