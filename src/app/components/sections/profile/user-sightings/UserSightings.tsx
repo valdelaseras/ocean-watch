@@ -67,7 +67,13 @@ const UserSightings: FC = () => (
     <ul className="feed-list">
       {feedListItems.map((feedListItem) => (
         <li key={feedListItem.id}>
-          <Card utilBar={false} colSizeA="column two" colSizeB="column two" title={feedListItem.title}>
+          <Card
+            utilBar={false}
+            colSizeA="column two"
+            colSizeB="column two"
+            title={feedListItem.title}
+            sightingId={feedListItem.id}
+          >
             <table>
               <tbody>
                 <tr>

@@ -7,9 +7,9 @@ import Select from '../../../atomic/atoms/select/Select';
 
 // TODO: light and dark theme must be simple themes, the rest can be fancy pansy
 const themes = [
-  { id: 'light-theme', value: 'light-theme', title: 'Light' },
-  { id: 'dark-theme', value: 'dark-theme', title: 'Dark' },
-  { id: 'auto-theme', value: 'auto-theme', title: 'Auto' },
+  { id: 'light-theme', value: 'light-theme', title: 'Minimal ( light )' },
+  { id: 'dark-theme', value: 'dark-theme', title: 'Minimal ( dark )' },
+  { id: 'auto-theme', value: 'auto-theme', title: 'Minimal ( auto )' },
   { id: 'dolphin-theme', value: 'dolphin-theme', title: 'Dolphin' },
   { id: 'nudibranch-theme', value: 'nudibranch-theme', title: 'Nudibranch' },
   { id: 'octopus-theme', value: 'octopus-theme', title: 'Octopus' },
@@ -31,6 +31,8 @@ const fontSizes = [
 //     { id: 'english', value: 'english', title: 'English' },
 //     { id: 'te-reo', value: 'te-reo', title: 'Te Reo' },
 // ];
+
+// TODO: I guess turn off option tips should be here... kinda?
 
 const VisualSettings: FC = () => (
   <div className="column">

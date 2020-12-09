@@ -5,14 +5,17 @@ import Card from '../../atomic/molecules/card/Card';
 import Feed from '../../atomic/organisms/feed/Feed';
 import UtilBar from '../../atomic/molecules/util-bar/UtilBar';
 import Select from '../../atomic/atoms/select/Select';
+import { useNavigate } from 'react-router';
 
-// Again seems to be issues with router version and @types like with 'exact' attribute on navlinks ??
-// import { useHistory } from 'react-router-dom';
-// let history = useHistory();
-//
-// const clickHandler = () => {
-//   history.push( '/sightings/new' );
-// };
+const PostSightingButton: FC = () => {
+  const navigate = useNavigate();
+
+  return (
+    <button onClick={ () => navigate('/sighting/new')} className="btn btn-primary" id="post-sighting-btn" type="button">
+      Post sighting
+    </button>
+  );
+};
 
 // TODO: if sighting is <TODAY> the card should be a different color
 const Dashboard: FC = () => (
@@ -52,7 +55,13 @@ const Dashboard: FC = () => (
         <ul className="feed-list">
           {feedListItems.map((feedListItem) => (
             <li key={feedListItem.id}>
-              <Card utilBar={true} colSizeA="column two" colSizeB="column two" title={feedListItem.title}>
+              <Card
+                utilBar={true}
+                colSizeA="column two"
+                colSizeB="column two"
+                title={feedListItem.title}
+                sightingId={feedListItem.id}
+              >
                 <table>
                   <tbody>
                     <tr>
@@ -89,9 +98,7 @@ const Dashboard: FC = () => (
       </Feed>
       <UtilBar className="full-vw fixed-bottom align-right">
         <li>
-          <button className="btn btn-primary" id="post-sighting-btn" type="button">
-            Post sighting
-          </button>
+          <PostSightingButton />
         </li>
       </UtilBar>
     </Content>
@@ -114,8 +121,10 @@ const genericSortingOptions = [
   { id: 'popular', value: 'popular', title: 'Popular' },
 ];
 
-// TODO: so 'surface' is basically 'can be viewed from land' ( or from a boat... ). Below surface is for sightings like
-// sea horses which you really need to get into the water for
+// TODO: so 'surface' is basically 'can be viewed from land' ( or from a boat... ).
+//  Below surface is for sightings like sea horses which you really need to get
+//  into the water for. But need to think this through with better names because
+//  'dolphins above surface' sounds kind of funny and weird
 const biomeSortingOptions = [
   { id: 'all-biomes', value: 'all-biomes', title: 'All biomes' },
   { id: 'sky', value: 'sky', title: 'Sky' },
@@ -127,6 +136,7 @@ const biomeSortingOptions = [
 ];
 
 // TODO: also add location google maps link & user message
+// This should eventually go into a sighting model anyway
 const feedListItems = [
   {
     id: '1',
