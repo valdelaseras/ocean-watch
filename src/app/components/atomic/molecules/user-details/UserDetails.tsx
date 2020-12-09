@@ -5,7 +5,7 @@ export interface UserDetailsProps {
   imgSrc?: string;
   username: string;
   email: string;
-  rank: string;
+  points: string;
   sightings: string;
   region: string;
   biomes: string;
@@ -19,7 +19,7 @@ const UserDetails: FC<UserDetailsProps> = ({
   imgSrc,
   username,
   email,
-  rank,
+  points,
   sightings,
   region,
   biomes,
@@ -60,12 +60,8 @@ const UserDetails: FC<UserDetailsProps> = ({
                 <td>{email}</td>
               </tr>
               <tr>
-                <th>Rank</th>
-                <td>
-                  {/*TODO: image must be loaded automatically based on user rank*/}
-                  <img src="/assets/icons/starfish.svg" alt={rank} title="user ranking icon" className="medium-icon" />
-                  {rank}
-                </td>
+                <th>Points</th>
+                <td>{points}</td>
               </tr>
               <tr>
                 <th>Sightings</th>

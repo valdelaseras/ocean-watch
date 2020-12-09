@@ -39,8 +39,9 @@ const AppRoutes: FC = () =>
     {
       path: '/',
       element: <App />,
+      // TODO: Sightings is a child of Dashboard with a feed nested in Sightings
       children: [
-        { path: '/', element: <Dashboard /> },
+        { path: '/dashboard', element: <Dashboard /> },
         {
           path: 'sighting',
           element: <Sightings />,

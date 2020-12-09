@@ -2,17 +2,29 @@ import React, { FC } from 'react';
 
 export interface InputProps {
   id: string;
-  title: string;
+  title?: string;
   text?: string;
   name: string;
   type: 'text' | 'email' | 'number' | 'password';
   placeholder: string;
   defaultValue: string;
   minLength?: number;
+  maxLength?: number;
   required?: boolean | undefined;
 }
 
-const Input: FC<InputProps> = ({ id, title, text, name, type, placeholder, defaultValue, minLength, required }) => (
+const Input: FC<InputProps> = ({
+  id,
+  title,
+  text,
+  name,
+  type,
+  placeholder,
+  defaultValue,
+  minLength,
+  maxLength,
+  required,
+}) => (
   <label htmlFor={id}>
     {title}
     {text ? <p>{text}</p> : null}
@@ -24,6 +36,7 @@ const Input: FC<InputProps> = ({ id, title, text, name, type, placeholder, defau
       placeholder={`${placeholder}${required ? ' *' : ''}`}
       defaultValue={defaultValue}
       minLength={minLength}
+      maxLength={maxLength}
       required={required}
     />
   </label>
