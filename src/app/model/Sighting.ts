@@ -7,9 +7,14 @@ export class Sighting {
     timestamp: string;
     verifications: number;
     organism: Organism;
+    quantity: string;
     note?: string;
     biome?: string;
     mediaUrls?: string[];
+    activity?: string;
+    direction?: string;
+    isHealthy?: boolean;
+    juvenilesArePresent?: boolean;
 
     constructor(
         id: string,
@@ -18,9 +23,14 @@ export class Sighting {
         timestamp: string,
         verifications: number,
         organism: Organism,
+        quantity: string,
         note?: string,
         biome?: string,
-        mediaUrls?: string[]
+        mediaUrls?: string[],
+        activity?: string,
+        direction?: string,
+        isHealthy?: boolean,
+        juvenilesArePresent?: boolean
     ){
         this.id = id;
         this.status = status;
@@ -30,7 +40,12 @@ export class Sighting {
         this.note = note;
         this.biome = biome;
         this.organism = organism;
+        this.quantity = quantity;
         this.mediaUrls = mediaUrls;
+        this.activity = activity;
+        this.direction = direction;
+        this.isHealthy = isHealthy;
+        this.juvenilesArePresent = juvenilesArePresent;
     }
 }
 
