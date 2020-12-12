@@ -1,6 +1,7 @@
 import { Organism} from './Organism';
 
 export class Sighting {
+    id: string;
     status: string;
     location: string;
     timestamp: string;
@@ -10,6 +11,7 @@ export class Sighting {
     mediaUrls?: string[];
 
     constructor(
+        id: string,
         status: string,
         location: string,
         timestamp: string,
@@ -18,6 +20,7 @@ export class Sighting {
         note?: string,
         mediaUrls?: string[]
     ){
+        this.id = id;
         this.status = status;
         this.location = location;
         this.timestamp = timestamp;

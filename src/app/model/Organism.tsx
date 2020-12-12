@@ -1,4 +1,5 @@
 export class Organism {
+    id: string;
     species: string;
     quantity: string;
     activity?: string;
@@ -7,13 +8,15 @@ export class Organism {
     isHealthy?: boolean;
     juvenilesArePresent?: boolean;
 
-    constructor( species: string,
+    constructor( id: string,
+                 species: string,
                  quantity: string,
                  activity: string,
                  isHealthy?: boolean,
                  direction?: string,
                  biome?: string,
                  juvenilesArePresent?: boolean, ) {
+        this.id = id;
         this.species = species;
         this.quantity = quantity;
         this.activity = activity;
