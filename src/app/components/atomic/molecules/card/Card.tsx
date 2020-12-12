@@ -32,7 +32,7 @@ const Card: FC<CardProps> = ({
   const savePost = (save: boolean): Promise<void> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.log(save ? 'Post saved' : 'Post unsaved');
+        console.log(save ? 'Post isSaved' : 'Post unsaved');
         resolve();
       }, 10);
     });

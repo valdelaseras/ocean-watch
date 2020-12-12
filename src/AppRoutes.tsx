@@ -63,10 +63,10 @@ const AppRoutes: FC = () =>
           path: 'profile',
           element: <Profile />,
           // TODO: these are the same component, just a feed with different filters but
-          // displayed in different 'views'. Show saved sightings on saved sightings view etc.
+          // displayed in different 'views'. Show isSaved sightings on isSaved sightings view etc.
           children: [
             { path: 'my-sightings', element: <UserSightings /> },
-            { path: 'saved-sightings', element: <SavedSightings /> },
+            { path: 'isSaved-sightings', element: <SavedSightings /> },
           ],
         },
         {

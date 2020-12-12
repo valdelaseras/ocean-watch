@@ -135,7 +135,7 @@ export default Nav;
 const profileNavLinks = [
   { to: '/profile', title: 'Profile', key: 'profile' },
   { to: '/profile/my-sightings', title: 'My sightings', key: 'my-sightings' },
-  { to: '/profile/saved-sightings', title: 'Saved sightings', key: 'saved-sightings' },
+  { to: '/profile/isSaved-sightings', title: 'Saved sightings', key: 'isSaved-sightings' },
 ];
 
 const settingsNavLinks = [
