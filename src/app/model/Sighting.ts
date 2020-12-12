@@ -8,6 +8,7 @@ export class Sighting {
     verifications: number;
     organism: Organism;
     note?: string;
+    biome?: string;
     mediaUrls?: string[];
 
     constructor(
@@ -18,6 +19,7 @@ export class Sighting {
         verifications: number,
         organism: Organism,
         note?: string,
+        biome?: string,
         mediaUrls?: string[]
     ){
         this.id = id;
@@ -26,7 +28,9 @@ export class Sighting {
         this.timestamp = timestamp;
         this.verifications = verifications;
         this.note = note;
+        this.biome = biome;
         this.organism = organism;
         this.mediaUrls = mediaUrls;
     }
 }
+

@@ -3,12 +3,9 @@ import Section from '../../layout/section/Section';
 import Content from '../../layout/content/Content';
 import UserDetails from '../../atomic/molecules/user-details/UserDetails';
 import UserSightings from './user-sightings/UserSightings';
-import User from "../../../model/User";
 
-const currentUser = new User( '1',
-    'Empress',
-    'Plankton',
-    '/assets/images/dolphin.png' )
+import { stubCurrentUser as currentUser } from "../../../stubs/currentUser";
+import { stubCurrentUserSightings } from "../../../stubs/currentUserSightings";
 
 const Profile: FC = () => (
   <Section id="profile" themeClass="theme-tertiary">
@@ -17,9 +14,9 @@ const Profile: FC = () => (
         id={ currentUser.id }
         imgSrc={ currentUser.avatarUrl }
         username={ currentUser.username }
-        email="dolphins@sea.co.nz"
-        points="124"
-        sightings="2"
+        email={ currentUser.email }
+        karma={ currentUser.karma }
+        sightings={ currentUser.sightings ? currentUser.sightings.length : 0 }
         givenVerifications="16"
         receivedVerifications="27"
         region="Wellington"
@@ -29,7 +26,7 @@ const Profile: FC = () => (
         // location which people may not like either. Consider to just remove it perhaps.
         // specific region or something might be enough
       />
-      <UserSightings />
+      <UserSightings sightings={ stubCurrentUserSightings }/>
     </Content>
   </Section>
 );

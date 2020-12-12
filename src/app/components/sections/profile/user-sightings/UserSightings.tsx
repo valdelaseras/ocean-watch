@@ -4,6 +4,9 @@ import Select from '../../../atomic/atoms/select/Select';
 import Card from '../../../atomic/molecules/card/Card';
 import Feed from '../../../atomic/organisms/feed/Feed';
 
+import {stubCurrentUserSightings} from "../../../../stubs/currentUserSightings";
+import {Sighting} from "../../../../model/Sighting";
+
 // TODO: util bar select dropdowns are very similar : )
 const genericSortingOptions = [
   { id: 'all', value: 'all', title: 'All' },
@@ -21,28 +24,11 @@ const biomeSortingOptions = [
   { id: 'tide-pools', value: 'tide-pools', title: 'Tide pools' },
 ];
 
-const feedListItems = [
-  {
-    id: '1',
-    title: 'Common dolphins',
-    reported: '[ 11:14 ] 23/10/2020',
-    location: 'Island Bay',
-    biome: 'Above surface',
-    verifications: '18',
-    status: 'Still here',
-  },
-  {
-    id: '2',
-    title: 'Reef octopus',
-    reported: '[ 18:23 ] 20/10/2020',
-    location: 'Taputeranga Marine Reserve',
-    biome: 'Tide pools',
-    verifications: '1',
-    status: 'Out of sight',
-  },
-];
+export interface userSightingsProps {
+  sightings: Sighting[]
+}
 
-const UserSightings: FC = () => (
+const UserSightings: FC< userSightingsProps > = ( { sightings } ) => (
   <Feed>
     <UtilBar className="full-vw" title="Your sightings">
       <li>
@@ -65,41 +51,41 @@ const UserSightings: FC = () => (
       </li>
     </UtilBar>
     <ul className="feed-list">
-      {feedListItems.map((feedListItem) => (
-        <li key={feedListItem.id}>
+      {sightings.map((sighting) => (
+        <li key={sighting.id}>
           <Card
             utilBar={false}
             colSizeA="column two"
             colSizeB="column two"
-            title={feedListItem.title}
-            sightingId={feedListItem.id}
+            title={sighting.organism.species}
+            sightingId={sighting.id}
           >
             <table>
               <tbody>
                 <tr>
                   <th>Reported</th>
-                  <td>{feedListItem.reported}</td>
+                  <td>{sighting.timestamp}</td>
                 </tr>
                 <tr>
                   <th>Location</th>
                   <td>
                     <a className="underlined" href="">
                       <img src="/assets/icons/gm-pin.svg" alt="google maps pin" className="small-icon" />{' '}
-                      {feedListItem.location}
+                      {sighting.location}
                     </a>
                   </td>
                 </tr>
                 <tr>
                   <th>Biome</th>
-                  <td>{feedListItem.biome}</td>
+                  <td>{sighting.biome}</td>
                 </tr>
                 <tr>
                   <th>Verifications</th>
-                  <td>{feedListItem.verifications}</td>
+                  <td>{sighting.verifications}</td>
                 </tr>
                 <tr>
                   <th>Latest status</th>
-                  <td>{feedListItem.status}</td>
+                  <td>{sighting.status}</td>
                 </tr>
               </tbody>
             </table>

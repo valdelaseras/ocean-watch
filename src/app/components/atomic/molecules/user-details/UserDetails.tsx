@@ -5,8 +5,8 @@ export interface UserDetailsProps {
   imgSrc?: string;
   username: string;
   email: string;
-  points: string;
-  sightings: string;
+  karma: number;
+  sightings: number;
   region: string;
   biomes: string;
   notifications: string;
@@ -19,7 +19,7 @@ const UserDetails: FC<UserDetailsProps> = ({
   imgSrc,
   username,
   email,
-  points,
+  karma,
   sightings,
   region,
   biomes,
@@ -61,7 +61,7 @@ const UserDetails: FC<UserDetailsProps> = ({
               </tr>
               <tr>
                 <th>Points</th>
-                <td>{points}</td>
+                <td>{karma}</td>
               </tr>
               <tr>
                 <th>Sightings</th>
