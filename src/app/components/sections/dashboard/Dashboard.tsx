@@ -11,7 +11,7 @@ const PostSightingButton: FC = () => {
   const navigate = useNavigate();
 
   return (
-    <button onClick={ () => navigate('/sighting/new')} className="btn btn-primary" id="post-sighting-btn" type="button">
+    <button onClick={() => navigate('/sighting/new')} className="btn btn-primary" id="post-sighting-btn" type="button">
       Post sighting
     </button>
   );

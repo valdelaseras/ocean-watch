@@ -4,8 +4,7 @@ import Select from '../../../atomic/atoms/select/Select';
 import Card from '../../../atomic/molecules/card/Card';
 import Feed from '../../../atomic/organisms/feed/Feed';
 
-import {stubCurrentUserSightings} from "../../../../stubs/currentUserSightings";
-import {Sighting} from "../../../../model/Sighting";
+import { Sighting } from '../../../../model/Sighting';
 
 // TODO: util bar select dropdowns are very similar : )
 const genericSortingOptions = [
@@ -25,10 +24,10 @@ const biomeSortingOptions = [
 ];
 
 export interface userSightingsProps {
-  sightings: Sighting[]
+  sightings: Sighting[];
 }
 
-const UserSightings: FC< userSightingsProps > = ( { sightings } ) => (
+const UserSightings: FC<userSightingsProps> = ({ sightings }) => (
   <Feed>
     <UtilBar className="full-vw" title="Your sightings">
       <li>

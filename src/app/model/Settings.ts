@@ -1,10 +1,9 @@
-import { Subscription } from "./Subscription";
+import { Subscription } from './Subscription';
 
 export class Settings {
-    subscriptions: Subscription[]
+  subscriptions: Subscription[];
 
-    constructor( subscriptions: Array<Subscription>) {
-        this.subscriptions = subscriptions
-    }
+  constructor(subscriptions: Array<Subscription>) {
+    this.subscriptions = subscriptions;
+  }
 }
-

@@ -32,7 +32,7 @@ import Faq from './app/components/sections/about/faq/Faq';
 import UserSightings from './app/components/sections/profile/user-sightings/UserSightings';
 import SavedSightings from './app/components/sections/profile/saved-sightings/SavedSightings';
 
-import {stubCurrentUserSightings} from "./app/stubs/currentUserSightings";
+import { stubCurrentUserSightings } from './app/stubs/currentUserSightings';
 
 const AppRoutes: FC = () =>
   useRoutes([
@@ -67,7 +67,7 @@ const AppRoutes: FC = () =>
           // TODO: these are the same component, just a feed with different filters but
           // displayed in different 'views'. Show isSaved sightings on isSaved sightings view etc.
           children: [
-            { path: 'my-sightings', element: <UserSightings sightings={ stubCurrentUserSightings }/> },
+            { path: 'my-sightings', element: <UserSightings sightings={stubCurrentUserSightings} /> },
             { path: 'isSaved-sightings', element: <SavedSightings /> },
           ],
         },

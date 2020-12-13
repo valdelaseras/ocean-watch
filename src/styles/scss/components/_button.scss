@@ -134,6 +134,12 @@ button {
   justify-content: center;
 }
 
+.icon-btn.icon-only-btn {
+  min-width: 30px;
+  width: 40px;
+  background-color: transparent;
+}
+
 .icon-btn img {
   padding-left: 0.5rem;
 }

@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, { FC, useState } from 'react';
 import Checkbox from '../../../atomic/atoms/checkbox/Checkbox';
 import FormField from '../../../atomic/molecules/form/form-field/FormField';
 import DropdownCheckbox from '../../../atomic/molecules/dropdown-checkbox/DropdownCheckbox';
@@ -7,105 +7,106 @@ import FormGroup from '../../../atomic/molecules/form/form-group/FormGroup';
 import Form from '../../../atomic/organisms/form/Form';
 
 const Notifications: FC = () => {
-    const [ enabledNotifications, setEnabledNotification ] = useState( true );
+  const [enabledNotifications, setEnabledNotification] = useState(true);
 
-    const enableNotifications = ( checked: boolean ) => {
-      // api call
-      return setEnabledNotification( checked );
-    };
+  const enableNotifications = (checked: boolean) => {
+    // api call
+    return setEnabledNotification(checked);
+  };
 
-    return (
-      <div className="column">
-        <h2>Notifications</h2>
-        <p>
-          If you choose to enable push notifications, by default you will receive notifications for all sighting updates
-          relevant to <span className="underlined">your subscriptions</span>. Below you may choose to customize your
-          notifications further.
-        </p>
-        <Form id="notifications-form" className="settings-form">
-          <div className="column">
-            <div className="column three">
-              <FormGroup id="notifications-general" title="General">
+  return (
+    <div className="column">
+      <h2>Notifications</h2>
+      <p>
+        If you choose to enable push notifications, by default you will receive notifications for all sighting updates
+        relevant to <span className="underlined">your subscriptions</span>. Below you may choose to customize your
+        notifications further.
+      </p>
+      <Form id="notifications-form" className="settings-form">
+        <div className="column">
+          <div className="column three">
+            <FormGroup id="notifications-general" title="General">
+              <FormField valid={true}>
+                <Checkbox
+                  title="Enable push notifications"
+                  id="pn-0"
+                  name="pn-permission"
+                  checked={enabledNotifications}
+                  action={enableNotifications}
+                  required={false}
+                />
+              </FormField>
+              {enabledNotifications ? (
                 <FormField valid={true}>
                   <Checkbox
-                    title="Enable push notifications"
-                    id="pn-0"
-                    name="pn-permission"
-                    checked={ enabledNotifications }
-                    action={ enableNotifications }
+                    title="All sightings"
+                    id="pn-all-sightings"
+                    name="all-sightings"
                     required={false}
+                    checked={true}
                   />
                 </FormField>
-                { enabledNotifications ? (
-                    <FormField valid={true}>
-                      <Checkbox
-                          title="All sightings"
-                          id="pn-all-sightings"
-                          name="all-sightings"
-                          required={false}
-                          checked={true}
-                      />
-                    </FormField>
-                ) : null }
-              </FormGroup>
-            </div>
-            <div className="column three">
-              <FormGroup id="notifications-advanced" title="Advanced">
-                <FormField valid={true}>
-                  <DropdownCheckbox id="pn-biomes" title="Biomes">
-                    <ul className="settings-list">
-                      {biomeFilterOptions.map((biomeFilterOption) => (
-                        <li key={biomeFilterOption.id}>
-                          <Checkbox
-                            title={biomeFilterOption.title}
-                            id={biomeFilterOption.id}
-                            name={biomeFilterOption.name}
-                            required={biomeFilterOption.required}
-                            checked={biomeFilterOption.checked}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </DropdownCheckbox>
-                </FormField>
-                <FormField valid={true}>
-                  <DropdownCheckbox id="pn-species" title="Species">
-                    <ul className="settings-list">
-                      {speciesFilterOptions.map((speciesFilterOption) => (
-                        <li key={speciesFilterOption.id}>
-                          <Checkbox
-                            title={speciesFilterOption.title}
-                            id={speciesFilterOption.id}
-                            name={speciesFilterOption.name}
-                            required={speciesFilterOption.required}
-                            checked={speciesFilterOption.checked}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </DropdownCheckbox>
-                </FormField>
-                <FormField valid={true}>
-                  <DropdownCheckbox id="pn-distance-dd" title="Distance">
-                    <ul className="settings-list">
-                      <li>
-                        <Select
-                          id="pn-distance-select"
-                          required={false}
-                          defaultValue="Within 10km"
-                          name="pn-distance"
-                          children={distanceFilterOptions}
+              ) : null}
+            </FormGroup>
+          </div>
+          <div className="column three">
+            <FormGroup id="notifications-advanced" title="Advanced">
+              <FormField valid={true}>
+                <DropdownCheckbox id="pn-biomes" title="Biomes">
+                  <ul className="settings-list">
+                    {biomeFilterOptions.map((biomeFilterOption) => (
+                      <li key={biomeFilterOption.id}>
+                        <Checkbox
+                          title={biomeFilterOption.title}
+                          id={biomeFilterOption.id}
+                          name={biomeFilterOption.name}
+                          required={biomeFilterOption.required}
+                          checked={biomeFilterOption.checked}
                         />
                       </li>
-                    </ul>
-                  </DropdownCheckbox>
-                </FormField>
-              </FormGroup>
-            </div>
+                    ))}
+                  </ul>
+                </DropdownCheckbox>
+              </FormField>
+              <FormField valid={true}>
+                <DropdownCheckbox id="pn-species" title="Species">
+                  <ul className="settings-list">
+                    {speciesFilterOptions.map((speciesFilterOption) => (
+                      <li key={speciesFilterOption.id}>
+                        <Checkbox
+                          title={speciesFilterOption.title}
+                          id={speciesFilterOption.id}
+                          name={speciesFilterOption.name}
+                          required={speciesFilterOption.required}
+                          checked={speciesFilterOption.checked}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </DropdownCheckbox>
+              </FormField>
+              <FormField valid={true}>
+                <DropdownCheckbox id="pn-distance-dd" title="Distance">
+                  <ul className="settings-list">
+                    <li>
+                      <Select
+                        id="pn-distance-select"
+                        required={false}
+                        defaultValue="Within 10km"
+                        name="pn-distance"
+                        children={distanceFilterOptions}
+                      />
+                    </li>
+                  </ul>
+                </DropdownCheckbox>
+              </FormField>
+            </FormGroup>
           </div>
-        </Form>
-      </div>
-)};
+        </div>
+      </Form>
+    </div>
+  );
+};
 
 // TODO: displayed options within these formfields must be based on user subscription settings and
 // checked boxes, default values etc. must be set accordingly.

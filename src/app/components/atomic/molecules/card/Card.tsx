@@ -38,19 +38,19 @@ const Card: FC<CardProps> = ({
     });
   };
 
-  const followPost = (save: boolean): Promise<void> => {
+  const followPost = (follow: boolean): Promise<void> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.log(save ? 'Following post' : 'Post unfollowed');
+        console.log(follow ? 'Following post' : 'Post unfollowed');
         resolve();
       }, 10);
     });
   };
 
-  const verifyPost = (save: boolean): Promise<void> => {
+  const verifyPost = (verify: boolean): Promise<void> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.log(save ? 'Verified post' : 'Post unverified');
+        console.log(verify ? 'Verified post' : 'Post unverified');
         resolve();
       }, 10);
     });

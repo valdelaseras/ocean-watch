@@ -1,12 +1,11 @@
-import {Sighting} from "../model/Sighting";
-import {Organism} from "../model/Organism";
+import { Sighting } from '../model/Sighting';
+import { Organism } from '../model/Organism';
 
-import { stubBottlenoseDolphin } from "./organisms";
-import { stubOrcaDolphin } from "./organisms";
+import { stubAtegamaNudibranch, stubBottlenoseDolphin, stubLemonShark, stubReefOctopus } from './organisms';
+import { stubOrcaDolphin } from './organisms';
 
 export const stubCurrentUserSightings = [
-
-    new Sighting(
+  new Sighting(
     '0',
     'Still here',
     'Houghton Bay',
@@ -20,10 +19,10 @@ export const stubCurrentUserSightings = [
     'Playing',
     'Red Rocks',
     true,
-    false
-    ),
+    false,
+  ),
 
-    new Sighting(
+  new Sighting(
     '1',
     'Gone',
     'Shelly Bay',
@@ -37,5 +36,57 @@ export const stubCurrentUserSightings = [
     'Hunting',
     'Evans Bay',
     true,
-    true
-    )];
+    true,
+  ),
+
+  new Sighting(
+    '3',
+    'Gone',
+    'Little Karaka Bay',
+    '10:00',
+    3,
+    stubAtegamaNudibranch,
+    '1',
+    'Feeding in tidal pool',
+    'Tidal pool',
+    undefined,
+    'Feeding',
+    undefined,
+    true,
+    false,
+  ),
+
+  new Sighting(
+    '4',
+    'Gone',
+    'Oriental Parade',
+    '15:03',
+    55,
+    stubLemonShark,
+    'Approx. 10',
+    'Around the restaurant',
+    'Bay',
+    undefined,
+    'Unknown',
+    undefined,
+    true,
+    true,
+  ),
+
+  new Sighting(
+    '5',
+    'Gone',
+    'Red Rocks',
+    '15:03',
+    2,
+    stubReefOctopus,
+    '1',
+    undefined,
+    'Tidal pool',
+    undefined,
+    'Unknown',
+    undefined,
+    true,
+    false,
+  ),
+];

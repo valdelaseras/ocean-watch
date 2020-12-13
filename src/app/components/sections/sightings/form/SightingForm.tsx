@@ -19,7 +19,7 @@ const SubmitSightingButton: FC = () => {
   return (
     // TODO: disable on invalid form etc.
     // TODO: navigate to dashboard + post ID so user can see their own post
-    <button onClick={ () => navigate('/dashboard')} className="btn btn-primary" id="submit-sighting-btn" type="button">
+    <button onClick={() => navigate('/dashboard')} className="btn btn-primary" id="submit-sighting-btn" type="button">
       Submit
     </button>
   );

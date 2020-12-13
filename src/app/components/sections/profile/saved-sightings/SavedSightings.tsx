@@ -43,12 +43,8 @@ const SavedSightings: FC = () => (
       </li>
     </UtilBar>
     <ul className="feed-list">
-      <li>
-        Saved sighting cards go here
-      </li>
-      <li>
-        Saved sighting cards go here
-      </li>
+      <li>Saved sighting cards go here</li>
+      <li>Saved sighting cards go here</li>
     </ul>
   </Feed>
 );
