@@ -4,6 +4,9 @@ import { Organism } from './Organism';
 // sightings may be difficult to post ( think something like Bioluminescent Dioflagellates, not everyone may know
 // what it is )
 
+// TODO: directions can be NESW or a place/area name, then need some functionality to compare coords point A and B
+//  and figure out NESW direction based on that, then automatically add that like: Roseneath ( North )
+
 export class Sighting {
   id: string;
   status: string;

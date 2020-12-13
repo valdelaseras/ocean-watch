@@ -87,12 +87,27 @@ const SightingDetails: FC = () => {
             <span className="bold">Juveniles present:</span> {currentSighting!.juvenilesArePresent ? 'Yes' : 'No'}
           </li>
         </ul>
+      </Content>
 
-        <h2></h2>
+      <Content colSize="column">
+        <h2>Images</h2>
+        {/*image carousel widget thing goes here*/}
+        <div className="carousel">
+          <img src="/assets/images/orca.jpg" alt="orca picture" />
+        </div>
+        {/*    <li>- Pictures</li>*/}
+        {/*    <li>- Map widget?</li>*/}
+        {/*    <li>- Stats widget ( some cool stats to compare earlier sightings of this same species in this area? )</li>*/}
+      </Content>
+
+      <Content colSize="column">
         <Feed title="Comments & updates">
+          {/*hide updates / hide comments > filter feed */}
           {/*{ comments ? {*/}
           {/*    comments*/}
           {/*} : "No updates yet" }*/}
+
+          {/*'comment-list' is a shit name'*/}
           <ul className="comment-list">
             {/*ForEach comment: */}
             <li>
@@ -104,7 +119,7 @@ const SightingDetails: FC = () => {
               <div className="comment">
                 <Row colSize="column">
                   <span className="bold">Timothy commented: </span>
-                  <span>Looks like 1 male, 3 females and babies</span>
+                  <span className="italic">Looks like 1 male, 3 females and babies</span>
                 </Row>
                 <Row colSize="column">
                   <small>11:45 PM, 13/12/2020</small>
@@ -113,9 +128,13 @@ const SightingDetails: FC = () => {
             </li>
 
             <li>
-              <div className="comment">
+              <div className="update">
                 <Row colSize="column">
-                  <span className="bold">Robin updated direction: </span>
+                  <span className="bold">Robin updated direction from </span>
+                  <span className="line-through">{currentSighting!.direction}</span>
+                  <span className="bold"> to </span>
+                  {/*latest updated direction*/}
+                  {/*New/latest direction must be reflected in details and sighting card*/}
                   <span>Roseneath</span>
                 </Row>
                 <Row colSize="column">
@@ -123,15 +142,67 @@ const SightingDetails: FC = () => {
                 </Row>
               </div>
             </li>
+
+            <li>
+              <div className="comment">
+                <Row colSize="column">
+                  <span className="bold">Laura commented: </span>
+                  <span className="italic">Looks like they hunting are stingray</span>
+                </Row>
+                <Row colSize="column">
+                  <small>10:53 PM, 13/12/2020</small>
+                </Row>
+              </div>
+            </li>
+
+            <li>
+              <div className="update">
+                <Row colSize="column">
+                  <span className="bold">Misha updated quantity from </span>
+                  <span className="line-through">{currentSighting!.quantity}</span>
+                  <span className="bold"> to </span>
+                  {/*latest updated direction*/}
+                  {/*New/latest direction must be reflected in details and sighting card*/}
+                  <span>9</span>
+                </Row>
+                <Row colSize="column">
+                  <small>10:03 PM, 13/12/2020</small>
+                </Row>
+              </div>
+            </li>
+
+            <li>
+              <div className="update">
+                <Row colSize="column">
+                  <span className="bold">Misha updated location from </span>
+                  <span className="line-through">{currentSighting!.location}</span>
+                  <span className="bold"> to </span>
+                  {/*latest updated direction*/}
+                  {/*New/latest direction must be reflected in details and sighting card*/}
+                  <span>Evans Bay</span>
+                </Row>
+                <Row colSize="column">
+                  <small>09:30 PM, 13/12/2020</small>
+                </Row>
+              </div>
+            </li>
+
+            <li>
+              <div className="update">
+                <Row colSize="column">
+                  <span className="bold">Tim added a photo </span>
+                </Row>
+                <Row colSize="column">
+                  <small>09:23 PM, 13/12/2020</small>
+                </Row>
+              </div>
+            </li>
           </ul>
         </Feed>
+      </Content>
 
-        {/*    <li>- Pictures</li>*/}
-        {/*    <li>- Map widget?</li>*/}
-        {/*    <li>- Stats widget ( some cool stats to compare earlier sightings of this same species in this area? )</li>*/}
-
-        <p>Sighting ID: {id}</p>
-
+      <Content colSize="column">
+        {/*TODO: request update functionality? Need to think about how that will work*/}
         <UtilBar className="compact-ub fixed-bottom full-vw align-right">
           <li>
             <button
